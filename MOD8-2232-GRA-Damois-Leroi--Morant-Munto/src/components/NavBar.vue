@@ -21,7 +21,12 @@ function sendUserInput() {
     </nav>
 </template>
 <style>
-* {
-    background-color: aqua;
+root {
+    --light-color-background: #a2c4ec;
+    --dark-color-background: #52649c;
+    background-color: var(--light-color-background);
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--dark-color-background);
+    }
 }
 </style>
