@@ -6,6 +6,7 @@ function sendUserInput() {
     emit('user-input', UserInput.value)
 }
 </script>
+/** This component is hte bar at the top of the screen */
 <template>
     <nav>
         <h3>

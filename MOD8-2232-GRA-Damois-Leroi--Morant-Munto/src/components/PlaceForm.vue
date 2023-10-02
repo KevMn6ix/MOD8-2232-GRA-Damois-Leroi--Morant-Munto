@@ -9,6 +9,7 @@ const placeInput = ref ({
     HygieneRating:0
 })
 </script>
+/** this is the form for to rate place */
 <template>
     <form method="post" onsubmit="return false">
         <label>

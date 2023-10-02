@@ -6,14 +6,15 @@ const placeSpecificity = defineProps({
 </script>
 /** this component is used for display any kind place */
 <template>
-    <RouterLink :to="'/places/' + placeSpecificity.id">
+    <RouterLink :to="'/places/' + placeSpecificity.id"> 
+        /**Slot for the picture */
     <slot name="picture">
     </slot>
+    /** slot for the place's name */
     <slot name="title">
     </slot>
-    <slot name="rating">
-
-    </slot>
+    /** slot for the place rating*/
+    /** depending on the general rating a different amount of   sterix is displayed and a 0 if there is none */
     <div v-if="placeSpecificity.rating=5">
         *****
     </div>
