@@ -4,6 +4,7 @@ const placeSpecificity = defineProps({
     id: Number
 })
 </script>
+/** this component is used for display any kind place */
 <template>
     <RouterLink :to="'/places/' + placeSpecificity.id">
     <slot name="picture">
