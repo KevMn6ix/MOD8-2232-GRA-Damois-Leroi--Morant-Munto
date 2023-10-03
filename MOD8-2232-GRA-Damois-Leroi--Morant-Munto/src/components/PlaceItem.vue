@@ -13,6 +13,8 @@ const placeSpecificity = defineProps({
     /** slot for the place's name */
     <slot name="title">
     </slot>
+    <slot name="address">
+    </slot>
     /** slot for the place rating*/
     /** depending on the general rating a different amount of   sterix is displayed and a 0 if there is none */
     <div v-if="placeSpecificity.rating=5">
