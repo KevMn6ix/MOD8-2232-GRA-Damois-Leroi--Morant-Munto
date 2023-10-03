@@ -1,0 +1,14 @@
+LEROI--MORANT Olivier
+DAMOIS Quentin
+MIUNTO Kevin
+
+Project Proposal :
+
+A site gathering touristic sites for students in Montreal. Students will be able to look up for places to go to, to leave comments and ratings, and also to add places to the database. 
+
+(Public) Sign up and log in
+(Public) Search for places
+(Public) Look at the description of the place (Name, location, contact...)
+(Authorized) Rate a place 
+(Authorized) leave a comment
+(Authorized) Add places to the site

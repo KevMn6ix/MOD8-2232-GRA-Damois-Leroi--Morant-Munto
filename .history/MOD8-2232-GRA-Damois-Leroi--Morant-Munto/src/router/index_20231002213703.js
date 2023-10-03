@@ -20,8 +20,6 @@ const router = createRouter({
     {
       path: '/places/:types',
       name: 'PlacesPage',
-
-      component: () => import('../views/PlacesPage.vue')
     }
   ]
 })
