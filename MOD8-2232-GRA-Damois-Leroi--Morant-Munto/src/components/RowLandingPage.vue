@@ -3,20 +3,20 @@
 import { RouterLink } from 'vue-router';
 
 const rowProps = defineProps({
-    textClass: String,
-    textType: String
+    textId: String,
+    textTitle: String
 })
 </script>
 <template>
-    <RouterLink :to="/places/ + rowProps.textType">
-    <h2 :class="rowProps.textClass">
-        <slot>
-        </slot>
+    <RouterLink :to="/places/ + rowProps.textId">
+    <h2 :id="rowProps.textId">
+
+        {{ rowProps.textTitle }}
     </h2>
     </RouterLink>
 </template>
 <style scoped>
-root {
+* {
     --light-color-background-restaurant: #a2c4ec;
     --light-color-background-travel: #A5BDD9;
     --light-color-background-activity: #9EB3CB;
@@ -26,23 +26,45 @@ root {
     --color-background-restaurant: var(--light-color-background-restaurant);
     --color-background-travel: var(--light-color-background-travel);
     --color-background-activity: var(--light-color-background-activity);
+    color: black;
     @media (prefers-color-scheme: dark) {
         --color-background-restaurant: var(--dark-color-background-restaurant);
         --color-background-travel: var(--dark-color-background-travel);
         --color-background-activity: var(--dark-color-background-activity);
+        color: white;
     }
 }
 template {
-    width: 100%;
     height: 5cm;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
 }
 #travel {
     background-color: var(--color-background-travel);
+    text-align: left;
+    padding-left: 0.5cm;
+    margin-right: -10%;
+    margin-left: -10%;
+    padding: 9%;
 }
 #restaurant {
     background-color: var(--color-background-restaurant);
+    text-align: right;
+    padding-right: 0.5cm;
+    margin-left: -10%;
+    margin-right: -10%;
+    padding: 9%;
+    margin-top: 10%;
 }
-#activitty {
+#activity {
     background-color: var(--color-background-activity);
+    text-align: right;
+    padding-right: 0.5cm;
+    margin-left: -10%;
+    margin-right: -10%;
+    padding: 9%;
+
 }
 </style>
