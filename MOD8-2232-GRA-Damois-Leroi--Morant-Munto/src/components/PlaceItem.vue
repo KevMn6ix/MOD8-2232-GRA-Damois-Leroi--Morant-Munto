@@ -1,4 +1,4 @@
-<script>
+<script setup>
 const placeSpecificity = defineProps({
     rating: Number,
     id: Number
@@ -6,34 +6,77 @@ const placeSpecificity = defineProps({
 </script>
 /** this component is used for display any kind place */
 <template>
-    <RouterLink :to="'/places/' + placeSpecificity.id"> 
-        /**Slot for the picture */
-    <slot name="picture">
+    <section id="window">
+    <RouterLink  :to="'/places/' + placeSpecificity.id">
+        <slot name="picture" id="picture">
     </slot>
-    /** slot for the place's name */
-    <slot name="title">
+    <p>
+    <slot name="title" id="title">
     </slot>
-    <slot name="address">
+    &nbsp;
+    <slot name="address" id="address">
     </slot>
-    /** slot for the place rating*/
-    /** depending on the general rating a different amount of   sterix is displayed and a 0 if there is none */
+</p>
     <div v-if="placeSpecificity.rating=5">
-        *****
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
     </div>
     <div v-else-if="placeSpecificity.rating=4">
-        ****
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
     <div v-else-if="placeSpecificity.rating=3">
-        ***
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
     <div v-else-if="placeSpecificity.rating=2">
-        **
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
     <div v-else-if="placeSpecificity.rating=1">
-        **
+        <img src="../assets/etoileMTL.png" alt="*">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
     <div v-else>
-        0
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
+        <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
-    </RouterLink> 
+    </RouterLink>
+    </section>
 </template>
+<style scoped>
+* {
+    color: black;
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
+}
+template {
+    display: inline-block;
+    
+}
+#window {
+    border: solid black;
+    @media (prefers-color-scheme: dark) {
+        border: solid white;
+    }
+}
+</style>
