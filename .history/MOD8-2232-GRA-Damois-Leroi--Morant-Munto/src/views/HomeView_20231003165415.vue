@@ -24,20 +24,14 @@ const placeList = ref([
     </h1>
     
     <RouterLink :to="{name : 'PlacesPage', params : {types: 'restaurants'}}">
-
-      <!-- <img class="logo" src="../assets/restaurant.jpg" alt="restaurant">  -->
-    
+      <img class="logo" src="../assets/restaurant.jpg" alt="restaurant">
     <RowLandingPage textId="restaurant" textTitle="Restaurant"/>
     </RouterLink>
     
-    <RouterLink :to="{name : 'PlacesPage', params : {types: 'activities'}}">
+    <RouterLink :to="{name : 'PlacesPage', params : {types: 'restaurants'}}">
       <RowLandingPage textId="travel" textTitle="Travel"/>
     </RouterLink>
-
-    <RouterLink :to="{name : 'PlacesPage', params : {types: 'travel'}}">
-      <RowLandingPage textId="activity" textTitle="Activity"/>
-    </RouterLink>
-    
+    <RowLandingPage textId="activity" textTitle="Activity"/>
   </div>
   <div v-else>
     <PlaceList :searchTerms="userInput" :placeArray="placeList"/>
