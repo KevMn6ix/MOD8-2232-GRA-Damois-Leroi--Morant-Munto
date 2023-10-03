@@ -30,18 +30,18 @@ export default {
 /** this component is used for display any kind place */
 <template>
     <div>
-      <!-- Display the picture, title, and address using props -->
-      <div class="picture">
-        <img :src="pictureUrl" alt="Place Image" />
-      </div>
-      <div class="title">
-        <h2>{{ title }}</h2>
-      </div>
-      <div class="address">
-        <p>{{ address }}</p>
-      </div>
+      <!-- Slot for the picture -->
+      <slot name="picture"></slot>
+      
+      <!-- Slot for the place's name -->
+      <slot name="title"></slot>
+      
+      <!-- Slot for the place's address -->
+      <slot name="address"></slot>
+      
       <!-- Display the place's rating using computed property -->
       <div>{{ computedRating }}</div>
+      
       <!-- Link to the place using router-link -->
       <router-link :to="'/places/' + id">Link to Place</router-link>
     </div>

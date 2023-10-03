@@ -53,7 +53,7 @@
           :rating="place.rating"
           :id="place.id"
           :title="place.name"
-          :address="place.address"
+          :address=""
         >
           <!-- Customize the slots as needed -->
         </PlaceItem>

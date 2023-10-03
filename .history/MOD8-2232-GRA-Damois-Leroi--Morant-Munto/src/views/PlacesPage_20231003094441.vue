@@ -19,14 +19,14 @@
         switch (type) {
         case 'restaurants':
             this.loadedPlaces = [
-              { id: 1, name: 'Restaurant 1', rating: 4, address: '123 Main St' },
-              { id: 2, name: 'Restaurant 2', rating: 5, address: '456 Main St' },
+              { id: 1, name: 'Restaurant 1', rating: 4 },
+              { id: 2, name: 'Restaurant 2', rating: 5 },
             ];
             break;
         case 'activities':
             this.loadedPlaces = [
-              { id: 3, name: 'Activity 1', rating: 3, address: '789 Main St' },
-              { id: 4, name: 'Activity 2', rating: 2, address: '1011 Main St' },
+              { id: 3, name: 'Activity 1', rating: 3 },
+              { id: 4, name: 'Activity 2', rating: 2 },
             ];
             break;
         case 'travel':
@@ -53,7 +53,7 @@
           :rating="place.rating"
           :id="place.id"
           :title="place.name"
-          :address="place.address"
+          :address="Jsp encore"
         >
           <!-- Customize the slots as needed -->
         </PlaceItem>
