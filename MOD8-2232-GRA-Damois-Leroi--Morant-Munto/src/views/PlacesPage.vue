@@ -40,22 +40,5 @@
 </script>
 
 <template>
-    <div>
-      <h1>{{ pageTitle }}</h1>
-  
-      <!-- Display Places -->
-      <div v-if="loadedPlaces.length > 0">
-        <PlaceItem
-          v-for="(place, index) in loadedPlaces"
-          :key="index"
-          :rating="place.rating"
-          :id="place.id"
-        >
-          <!-- Customize the slots as needed -->
-        </PlaceItem>
-      </div>
-      <div v-else>
-        <p>No places to display.</p>
-      </div>
-    </div>
+    
 </template>
