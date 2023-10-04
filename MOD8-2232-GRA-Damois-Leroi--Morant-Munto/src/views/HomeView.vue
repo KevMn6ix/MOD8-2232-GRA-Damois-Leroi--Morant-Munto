@@ -28,7 +28,10 @@ const placeList = ref([
   <div v-else>
     <PlaceList :searchTerms="userInput" :placeArray="placeList"/>
   </div>
+
+    
   </main>
+  <router-link to="/places/review" name='placereview'> review</router-link>
 </template>
 <style>
 h1 {
