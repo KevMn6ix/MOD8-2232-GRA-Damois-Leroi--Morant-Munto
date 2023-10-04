@@ -55,7 +55,7 @@
         </PlaceItem>
       </div>
       <div v-else>
-        <p>No places to display.</p>
+        <p>No places to display</p>
       </div>
     </div>
 </template>
