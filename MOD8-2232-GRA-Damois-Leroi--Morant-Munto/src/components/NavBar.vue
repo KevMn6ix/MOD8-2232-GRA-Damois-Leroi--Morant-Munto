@@ -39,6 +39,7 @@ nav {
     gap: 20px;
 }
 img {
+    margin-left: 3px;
     height: 20px;
     width: 16px;
 }

@@ -23,8 +23,8 @@ const placeList = ref([
       Visit the most beautiful places with MTL<br>Student Spot !
     </h1>
     <ul id="browse">
-      <li id="restaurant"><RowLandingPage textId="restaurant" textTitle="Restaurant"/></li>
       <li id="travel"><RowLandingPage textId="travel" textTitle="Travel"/></li>
+      <li id="restaurant"><RowLandingPage textId="restaurant" textTitle="Restaurant"/></li>
       <li id="activity"><RowLandingPage textId="activity" textTitle="Activity"/></li>
   </ul>
   </div>
@@ -73,7 +73,8 @@ h1 {
   min-width: 189px;
 }
 #browse li {
-  display: flex;
+  /*
+  display: flex;*/
   padding: 6%;
   
 }
@@ -89,7 +90,9 @@ h1 {
 }
 ul {
   list-style-type: none;
+  /*
   justify-content: flex-start;
+  */
   padding: 0;
   text-decoration: none;
   max-height: 100px;
@@ -97,15 +100,16 @@ ul {
 #restaurant {
   background-color: var(--color-background-restaurant);
   justify-self: start;
+  text-align: end;
+  
 }
 #travel {
   background-color: var(--color-background-travel);
-  justify-self: right;
-  text-align: right;
+  
 }
 #activity {
   background-color: var(--color-background-activity);
-  justify-self: start;
+  
 }
 #research {
   display: flex;
