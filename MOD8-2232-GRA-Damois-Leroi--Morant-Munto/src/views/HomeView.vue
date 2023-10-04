@@ -35,7 +35,6 @@ const placeList = ref([
 
     
   </main>
-  <router-link to="/places/review" name='placereview'> review</router-link>
 </template>
 <style>
 * {
