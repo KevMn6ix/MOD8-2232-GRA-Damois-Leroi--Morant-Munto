@@ -1,5 +1,5 @@
 <script>
-    import PlaceItem from '../components/PlaceItem.vue'; // Import your PlaceItem component here
+    import PlaceItem from './PlaceItem.vue'; // Import your PlaceItem component here
 
     export default {
     components: {
