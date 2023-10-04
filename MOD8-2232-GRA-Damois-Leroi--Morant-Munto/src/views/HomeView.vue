@@ -6,9 +6,10 @@ import PlaceList from '../components/PlaceList.vue';
 const userInput = ref('');
 let id = ref(0);
 const placeList = ref([
-  {Id: ++id, Title: "Brutopia", Address: "888 rjij", Rating: 2, HygieneRating: 5, AmbianceRating: 3, PriceRating: 5},
+  {Id: ++id, Title: "Brutopia", Address: "888 rjij", Rating: 2, HygieneRating: 5, AmbianceRating: 3, PriceRating: 5, Picture: "https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg"},
   {Id: ++id, Title: "cheval blanc", Address: "56656 fd", Rating: 3, HygieneRating: 3, AmbianceRating: 4, PriceRating: 2},
-  {Id: ++id, Title: "nyx", Address: "86 sfd", Rating: 1, HygieneRating: 4, AmbianceRating: 4, PriceRating: 2}
+  {Id: ++id, Title: "nyx", Address: "86 sfd", Rating: 1, HygieneRating: 4, AmbianceRating: 4, PriceRating: 2},
+  {Id: ++id, Title: "bnyx", Address: "86 sfd", Rating: 1, HygieneRating: 4, AmbianceRating: 4, PriceRating: 2, Picture:"https://cdn4.buysellads.net/uu/1/134955/1685040267-designdotdev5.jpg"}
 ])
 </script>
 
@@ -21,59 +22,97 @@ const placeList = ref([
     <h1>
       Visit the most beautiful places with MTL<br>Student Spot !
     </h1>
-    <RowLandingPage textId="restaurant" textTitle="Restaurant"/>
-    <RowLandingPage textId="travel" textTitle="Travel"/>
-    <RowLandingPage textId="activity" textTitle="Activity"/>
+    <ul id="browse">
+      <li id="restaurant"><RowLandingPage textId="restaurant" textTitle="Restaurant"/></li>
+      <li id="travel"><RowLandingPage textId="travel" textTitle="Travel"/></li>
+      <li id="activity"><RowLandingPage textId="activity" textTitle="Activity"/></li>
+  </ul>
   </div>
-  <div v-else>
+  <div v-else id="research">
     <PlaceList :searchTerms="userInput" :placeArray="placeList"/>
   </div>
   </main>
 </template>
 <style>
-h1 {
-  text-align: center;
+* {
+    --light-color-background-restaurant: #a2c4ec;
+    --light-color-background-travel: #A5BDD9;
+    --light-color-background-activity: #9EB3CB;
+    --dark-color-background-restaurant: #a2c4ec9d;
+    --dark-color-background-travel: #a5bdd971;
+    --dark-color-background-activity: #9eb3cb0e;
+    --color-background-restaurant: var(--light-color-background-restaurant);
+    --color-background-travel: var(--light-color-background-travel);
+    --color-background-activity: var(--light-color-background-activity);
+    color: black;
+    
+
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:nowrap;
 }
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+@media (prefers-color-scheme: dark) {
+  * {
+        --color-background-restaurant: var(--dark-color-background-restaurant);
+        --color-background-travel: var(--dark-color-background-travel);
+        --color-background-activity: var(--dark-color-background-activity);
+        color: white;
+      }
+    }
+    header {
+  background-color: var(--color-background-restaurant);
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
+h1 {
   text-align: center;
-  margin-top: 2rem;
+  min-width: 189px;
 }
-#home-body {
-  margin-top: 8%;
+#browse li {
+  display: flex;
+  padding: 6%;
+  
 }
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+@media (min-width: 500px) {
+  #browse li {
+    padding: 3%;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+}
+@media (min-height: 500px) {
+  #browse li {
+    padding: 3%;
   }
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+}
+ul {
+  list-style-type: none;
+  justify-content: flex-start;
+  padding: 0;
+  text-decoration: none;
+  max-height: 100px;
+}
+#restaurant {
+  background-color: var(--color-background-restaurant);
+  justify-self: start;
+}
+#travel {
+  background-color: var(--color-background-travel);
+  justify-self: right;
+  text-align: right;
+}
+#activity {
+  background-color: var(--color-background-activity);
+  justify-self: start;
+}
+#research {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#research li {
+  padding: 1%;
 }
 </style>
