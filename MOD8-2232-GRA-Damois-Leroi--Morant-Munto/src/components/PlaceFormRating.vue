@@ -17,11 +17,7 @@ export default {
     props: {
         place: Object,
         ratePlace: Function
-    },
-    component: {
-        StarRating,
-    },
-    
+    },    
     methods: {
         getData(data){
             this.result = data;
@@ -30,21 +26,23 @@ export default {
 
         setPriceRating(data){
             this.placeRate.priceRating = data;
-            console.log(this.placeRate)
+            console.log(this.placeRate);
         },
 
         setAmbianceRating(data){
             this.placeRate.ambianceRating = data;
-            console.log(this.placeRate)
+            console.log(this.placeRate);
         },
 
         setHygieneRating(data){
             this.placeRate.hygieneRating = data;
-            console.log(this.placeRate)
+            console.log(this.placeRate);
+        },
+
+        setComment(data){
+            this.placeRate.comment = data;
+            console.log(this.placeRate);
         }
-
-
-
     },
     components: { StarRating }
 }
@@ -53,58 +51,85 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="place-container">
         Place name : {{ }}
     </div>    
-    <div class="form">
-        <form>
-            <label id="price">Price Rating</label>
-            <StarRating category="priceRating" @rate="setPriceRating($event)" />
-
-            <label id="ambiance">Ambiance Rating</label>
-            <StarRating category="ambianceRating" @rate="setAmbianceRating($event)" />
+    <div>
+        <div class="star-container">
+            <div class="rating-pair">
+                <label id="price">Price Rating</label>
+                <StarRating category="priceRating" @rate="setPriceRating($event)" />
+            </div>
+            <div class="rating-pair">
+                <label id="ambiance">Ambiance Rating</label>
+                <StarRating category="ambianceRating" @rate="setAmbianceRating($event)" />
+            </div>
+            <div class="rating-pair">
+                <label id="hygiene">Hygiene Rating</label>
+                <StarRating category="hygieneRating" @rate="setHygieneRating($event)" />
+            </div>            
+        </div>
             
-            <label id="hygiene">Hygiene Rating</label>
-            <StarRating category="hygieneRating" @rate="setHygieneRating($event)" />
-        </form>
-        <div>
-            <label id="comment-section">Leave a Comment</label>
-            <textarea placeholder="What do you think about that ?"></textarea>
+        <div class="comment-container">
+            <label>Leave a Comment</label>
+            <textarea placeholder="What do you think about that ?" v-model="comment"></textarea>
+        </div>
+        <div class="button-container">
+            <button @click="setComment(comment)">Save Rating</button>
         </div>
     </div>
 </template>
 
 <style>
-/*
-label {
 
-    margin-bottom: 0.5rem;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    padding: 4rem 1rem;
-    margin: auto;
-    max-width: 600px;
-}*/
 
 body{
-    font-size: 13px;
+    font-size: 1.5rem;
 }
 
-.star-rating span{
-    display: inline-block;
-    color: gold;
+.place-container{
+    padding: 5rem;
     font-size: 2rem;
-    position: relative;
+    text-align: center;
 }
 
-.star-rating .star-rating-current {
-    position: abs;
+.star-container{
+    background-color: #A5BDD9;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.rating-pair{
     
-    
-    
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    gap: 1rem;
+}
+
+.comment-container {
+    background-color: #a2c4ec;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+textarea{
+    width: 350px;
+    height: 150px;
+}
+
+.button-container {
+    background-color: #9EB3CB;
+    padding: 3rem;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button{
+   
 }
 
 </style>
