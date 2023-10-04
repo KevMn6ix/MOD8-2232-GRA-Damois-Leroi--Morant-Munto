@@ -22,6 +22,12 @@ const router = createRouter({
       name: 'PlacesPage',
 
       component: () => import('../views/PlaceListView.vue')
+    },
+    {
+      path: '/places/review',
+      name : 'review',
+
+      component: () => import('../views/PlaceReview.vue')
     }
   ]
 })
