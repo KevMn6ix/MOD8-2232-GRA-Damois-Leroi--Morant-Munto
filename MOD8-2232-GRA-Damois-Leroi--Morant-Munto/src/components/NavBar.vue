@@ -15,45 +15,35 @@ function sendUserInput() {
             MTLSudentSpot
         </h3>
         <input type="text" v-model="UserInput" @input="sendUserInput">
+        <div>
         <button>
             Log In
         </button>
         <button>
             Sign In
         </button>
+    </div>
     </nav>
 </template>
 <style>
-img {
-    margin-top: 4%;
-    width: 10%;
-    height: 50%;
-    padding-right: 1%;
-    padding-left: 1%;
-}
-h3 {
-    padding-top: 5%;
-}
-#head-bar {
-    --light-color-background: #a2c4ec;
-    --dark-color-background: #52649c;
-    background-color: var(--light-color-background);
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: -1%;
-    height: 10%;
+nav {
     display: flex;
-    @media (prefers-color-scheme: dark) {
-        background-color: var(--dark-color-background);
-    }   
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    flex-grow: 3;
+    min-width: 178px;
+    gap: 20px;
+}
+img {
+    margin-left: 3px;
+    height: 20px;
+    width: 16px;
 }
 input {
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-button {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    flex-grow: 3;
 }
 </style>

@@ -34,37 +34,7 @@ const rowProps = defineProps({
         color: white;
     }
 }
-template {
-    height: 5cm;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: nowrap;
-}
 #travel {
-    background-color: var(--color-background-travel);
-    text-align: left;
-    padding-left: 0.5cm;
-    margin-right: -10%;
-    margin-left: -10%;
-    padding: 9%;
-}
-#restaurant {
-    background-color: var(--color-background-restaurant);
-    text-align: right;
-    padding-right: 0.5cm;
-    margin-left: -10%;
-    margin-right: -10%;
-    padding: 9%;
-    margin-top: 10%;
-}
-#activity {
-    background-color: var(--color-background-activity);
-    text-align: right;
-    padding-right: 0.5cm;
-    margin-left: -10%;
-    margin-right: -10%;
-    padding: 9%;
-
+    text-align: start;
 }
 </style>

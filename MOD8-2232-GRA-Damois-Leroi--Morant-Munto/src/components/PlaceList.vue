@@ -29,13 +29,24 @@ const propsList = defineProps({
     </ul>
 </template>
 <style scoped>
-ul {
-    list-style-type: none;
+img {
+    height: 175px;
+    width: 175px;
 }
-header {
-    position: static;
-    top: 0;
-    padding: 0;
-    margin: 0;
+@media (max-width: 555px) {
+    img {
+        height: 50px;
+        width: 50px;
+    }   
+}
+ul {
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 387) {
+    ul li {
+        width: 300px;
+    }
+    
 }
 </style>
