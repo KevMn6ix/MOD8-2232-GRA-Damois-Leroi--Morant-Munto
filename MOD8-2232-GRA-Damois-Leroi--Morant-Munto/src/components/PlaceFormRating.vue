@@ -58,15 +58,15 @@ export default {
         <div class="star-container">
             <div class="rating-pair">
                 <label id="price">Price Rating</label>
-                <StarRating category="priceRating" @rate="setPriceRating($event)" />
+                <StarRating category="priceRating" @rate="setPriceRating" />
             </div>
             <div class="rating-pair">
                 <label id="ambiance">Ambiance Rating</label>
-                <StarRating category="ambianceRating" @rate="setAmbianceRating($event)" />
+                <StarRating category="ambianceRating" @rate="setAmbianceRating" />
             </div>
             <div class="rating-pair">
                 <label id="hygiene">Hygiene Rating</label>
-                <StarRating category="hygieneRating" @rate="setHygieneRating($event)" />
+                <StarRating category="hygieneRating" @rate="setHygieneRating" />
             </div>            
         </div>
             
