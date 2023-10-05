@@ -6,7 +6,6 @@ import PlaceFormRating from '../components/PlaceFormRating.vue';
 
 <template>
     <div>
-        <h1>aaa</h1>
         <PlaceFormRating />
     </div>
 </template>

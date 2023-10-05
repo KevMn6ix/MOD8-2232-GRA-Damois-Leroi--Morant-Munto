@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import LoginPage from '../views/LoginPage.vue'
+
 const emit = defineEmits(['user-input'])
 const UserInput = ref('')
 function sendUserInput() {
@@ -17,7 +19,7 @@ function sendUserInput() {
         <input type="text" v-model="UserInput" @input="sendUserInput">
         <div>
         <button>
-            Log In
+            <router-link to='/login'>Log In</router-link>
         </button>
         <button>
             Sign In
