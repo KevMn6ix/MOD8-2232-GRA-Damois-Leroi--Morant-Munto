@@ -1,5 +1,5 @@
 <script>
-    import PlaceList from '../components/PlaceList.vue'; // Import your PlaceItem component here
+    import PlaceList from '../components/placelist.vue'; // Import your PlaceItem component here
 
     export default {
     components: {
@@ -50,7 +50,7 @@
         {{ console.log(loadedPlaces) }}
       </div>
       <div v-else>
-        <p>No places to display</p>
+        <p>No places to display.</p>
       </div>
     </div>
 </template>
