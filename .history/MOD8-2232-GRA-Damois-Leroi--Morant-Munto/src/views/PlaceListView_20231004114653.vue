@@ -1,9 +1,9 @@
 <script>
-    import PlaceList from '../components/PlaceList.vue'; // Import your PlaceItem component here
+    import PlaceItem from '../components/PlaceItem.vue'; // Import your PlaceItem component here
 
     export default {
     components: {
-      PlaceList,
+        PlaceItem,
     },
     data() {
         return {
@@ -17,13 +17,13 @@
 
         // Simulate loading places based on the 'type' parameter
         switch (types) {
-          case 'restaurant':
+          case 'restaurants':
               this.loadedPlaces = [
               { id: 3, name: 'Activity 1', rating: 3 },
               { id: 4, name: 'Activity 2', rating: 2 },
               ];
               break;
-          case 'activity':
+          case 'activities':
               this.loadedPlaces = [
               // Simulate a database response
               ];
@@ -34,6 +34,7 @@
               ];
               break;
           default:
+              
               this.loadedPlaces = [];
         }
     },
@@ -50,7 +51,7 @@
         {{ console.log(loadedPlaces) }}
       </div>
       <div v-else>
-        <p>No places to display</p>
+        <p>No places to display.</p>
       </div>
     </div>
 </template>

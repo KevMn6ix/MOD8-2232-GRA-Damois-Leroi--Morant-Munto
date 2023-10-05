@@ -18,23 +18,10 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/login',
-      name: 'login',
-
-      component: () => import('../views/LoginPage.vue')
-
-    },
-    {
       path: '/places/:types',
       name: 'PlacesList',
 
       component: () => import('../views/PlaceListView.vue')
-    },
-    {
-      path: '/places/review',
-      name : 'review',
-
-      component: () => import('../views/PlaceReview.vue')
     },
     {
 
@@ -42,6 +29,7 @@ const router = createRouter({
       name: 'PlacePage',
 
       component: () => import('../views/PlacesPage.vue')
+
 
     }
   ]

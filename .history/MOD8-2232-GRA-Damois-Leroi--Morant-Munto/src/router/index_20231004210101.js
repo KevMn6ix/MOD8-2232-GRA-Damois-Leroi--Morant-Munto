@@ -18,13 +18,6 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/login',
-      name: 'login',
-
-      component: () => import('../views/LoginPage.vue')
-
-    },
-    {
       path: '/places/:types',
       name: 'PlacesList',
 
@@ -35,14 +28,6 @@ const router = createRouter({
       name : 'review',
 
       component: () => import('../views/PlaceReview.vue')
-    },
-    {
-
-      path: '/places/:types/:id',
-      name: 'PlacePage',
-
-      component: () => import('../views/PlacesPage.vue')
-
     }
   ]
 })
