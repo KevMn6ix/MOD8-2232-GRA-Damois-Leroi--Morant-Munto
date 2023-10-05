@@ -22,7 +22,7 @@ function sendUserInput() {
             <router-link to='/login'>Log In</router-link>
         </button>
         <button>
-            Sign In
+            <router-link to="/register">Sign In</router-link>
         </button>
     </div>
     </nav>
