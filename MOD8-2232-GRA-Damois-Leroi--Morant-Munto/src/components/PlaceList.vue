@@ -12,9 +12,8 @@ const propsList = defineProps({
     </h1>
     <ul>
         <li v-for="place in propsList.placeArray.filter((p) => { 
-            console.log(p);
             return ((p.Title.substring(0, propsList.searchTerms.length)).toLowerCase() === propsList.searchTerms.toLowerCase())})">
-            <PlaceItem :id="place.id" :rating="place.Rating">
+            <PlaceItem :id="place.Id" :rating="place.Rating">
                 <template #picture>
                     <img :src="place.Picture" alt="place's picture">
                 </template>
