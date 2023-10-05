@@ -1,9 +1,9 @@
 <script>
-    import PlaceList from '../components/PlaceList.vue'; // Import your PlaceItem component here
+    import PlaceItem from '../components/PlaceItem.vue'; // Import your PlaceItem component here
 
     export default {
     components: {
-      PlaceList,
+        PlaceItem,
     },
     data() {
         return {
@@ -34,6 +34,7 @@
               ];
               break;
           default:
+              
               this.loadedPlaces = [];
         }
     },

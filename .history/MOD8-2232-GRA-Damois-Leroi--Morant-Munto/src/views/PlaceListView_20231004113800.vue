@@ -1,40 +1,41 @@
 <script>
-    import PlaceList from '../components/PlaceList.vue'; // Import your PlaceItem component here
+    import PlaceItem from '../components/PlaceItem.vue'; // Import your PlaceItem component here
 
     export default {
     components: {
-      PlaceList,
+        PlaceItem,
     },
     data() {
         return {
         pageTitle: 'Places Page',
-        loadedPlaces: [], 
+        loadedPlaces: [], // Initialize with an empty array
         };
     },
     created() {
         // Access the type parameter from the URL
         const types = this.$route.params.types;
+        console.log(types);
 
         // Simulate loading places based on the 'type' parameter
         switch (types) {
-          case 'restaurant':
-              this.loadedPlaces = [
-              { id: 3, name: 'Activity 1', rating: 3 },
-              { id: 4, name: 'Activity 2', rating: 2 },
-              ];
-              break;
-          case 'activity':
-              this.loadedPlaces = [
-              // Simulate a database response
-              ];
-              break;
-          case 'travel':
-              this.loadedPlaces = [
-              // Simulate a database response
-              ];
-              break;
-          default:
-              this.loadedPlaces = [];
+        case 'restaurants':
+            this.loadedPlaces = [
+            { id: 3, name: 'Activity 1', rating: 3 },
+            { id: 4, name: 'Activity 2', rating: 2 },
+            ];
+            break;
+        case 'activities':
+            this.loadedPlaces = [
+            // Simulate a database response
+            ];
+            break;
+        case 'travel':
+            this.loadedPlaces = [
+            // Simulate a database response
+            ];
+            break;
+        default:
+            this.loadedPlaces = [];
         }
     },
     };
@@ -43,6 +44,7 @@
 <template>
     <div>
       <h1>{{ pageTitle }}</h1>
+      {{ console.log(loadedPlaces) }}
       <!-- Display Places -->
       <div v-if="loadedPlaces.length > 0">
         

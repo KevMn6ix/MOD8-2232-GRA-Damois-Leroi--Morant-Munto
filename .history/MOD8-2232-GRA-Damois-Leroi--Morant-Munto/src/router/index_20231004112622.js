@@ -22,14 +22,6 @@ const router = createRouter({
       name: 'PlacesList',
 
       component: () => import('../views/PlaceListView.vue')
-    },
-    {
-
-      path: '/places/:types/:id',
-      name: 'PlacePage',
-
-      component: () => import('../views/PlacesPage.vue')
-
     }
   ]
 })
