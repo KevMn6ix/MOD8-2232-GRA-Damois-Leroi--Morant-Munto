@@ -22,9 +22,7 @@
 
         if (place) {
             const { HygieneRating, AmbianceRating, PriceRating } = place;
-            const totalRating = (HygieneRating + AmbianceRating + PriceRating) / 3;
-
-            return totalRating.toFixed(1);
+            return (HygieneRating + AmbianceRating + PriceRating) / 3;
         }
         return 0; 
     };

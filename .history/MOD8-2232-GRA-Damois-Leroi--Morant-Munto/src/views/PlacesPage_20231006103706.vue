@@ -1,9 +1,8 @@
 <script setup>
 
-    import { ref, computed } from 'vue'
+    import { ref } from 'vue'
     import { useRoute } from 'vue-router'
 
-    const id = ref(0);
     const placeList = ref([
         { Id: ++id.value, Type: "restaurant", Title: "Brutopia", Address: "888 rjij", Rating: 2, HygieneRating: 5, AmbianceRating: 3, PriceRating: 5, Picture: "https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" },
         { Id: ++id.value, Type: "restaurant", Title: "cheval blanc", Address: "56656 fd", Rating: 3, HygieneRating: 3, AmbianceRating: 4, PriceRating: 2 },
@@ -12,19 +11,17 @@
     ]);
 
     const route = useRoute()
-    const id_place = Number(route.params.id)
+    const id = Number(route.params.id)
 
     const place = computed(() => {
-        return placeList.value.find((p) => p.Id === id_place);
+        return placeList.value.find((p) => p.Id === id);
     });
 
     const calculateTotalRating = (place) => {
 
         if (place) {
             const { HygieneRating, AmbianceRating, PriceRating } = place;
-            const totalRating = (HygieneRating + AmbianceRating + PriceRating) / 3;
-
-            return totalRating.toFixed(1);
+            return (HygieneRating + AmbianceRating + PriceRating) / 3;
         }
         return 0; 
     };
@@ -33,25 +30,6 @@
 
 <template>
     
-    <div>
-        <h1>{{ place.Title }}</h1>
-        <img :src="place.Picture" alt="Place Image">
-        <p>{{ place.Address }}</p>
 
-        <!-- Display ratings -->
-        <div>
-            <h2>Ratings</h2>
-            <p>Hygiene Rating: {{ place.HygieneRating }}</p>
-            <p>Ambiance Rating: {{ place.AmbianceRating }}</p>
-            <p>Price Rating: {{ place.PriceRating }}</p>
-            <!-- Add other ratings as needed -->
-        </div>
-
-        <!-- Display total rating (calculate it if needed) -->
-        <div>
-            <h2>Total Rating</h2>
-            <p>{{ calculateTotalRating(place) }}</p>
-        </div>
-    </div>
 
 </template>
