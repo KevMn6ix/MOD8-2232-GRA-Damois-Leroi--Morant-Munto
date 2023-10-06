@@ -16,7 +16,7 @@ const placeList = ref([
 
 <template>
   <header>
-    <NavBar @user-input="(termInputed) => {userInput = termInputed; console.log(termInputed)}"/>
+    <NavBar @user-input="(termInputed) => {userInput = termInputed;}"/>
   </header>
   <main id="home-body">
     <div v-if="userInput === ''">
