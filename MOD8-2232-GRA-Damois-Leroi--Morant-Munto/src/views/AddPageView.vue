@@ -5,5 +5,5 @@ import TheAddPlaceForm from '../components/TheAddPlaceForm.vue';
     <h1>
         Reference any place you like to hang out
     </h1>
-    <TheAddPlaceForm/>
+    <TheAddPlaceForm @user-input="(termInputed) => {UserInput.Address = termInputed}"/>
 </template>
