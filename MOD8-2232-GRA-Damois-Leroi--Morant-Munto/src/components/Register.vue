@@ -1,22 +1,31 @@
 <script>
 
 export default{
+    name: 'RegisterForm',
     data() {
         return {
-            user : {
-                lastName: '',
-                firstName: '',
-                email: '',
-                phoneNumber: '',
-                password: '',
-            }
+            lastName: '',
+            firstName: '',
+            email: '',
+            phoneNumber: '',
+            password: '',
+            passwordConfirm: ''
+            
         }
     },
     methods : {
-        onSubmit(data) {
-            if(data.password !== data.confirmedPassWord) {
-                return
-            }
+        handleSubmit() {
+            const userData = {
+                lastName: this.lastName,
+                firstName: this.firstName,
+                email: this.email,
+                phoneNumber: this.phoneNumber,
+                password: this.password,
+                passwordConfirm: this.passwordConfirm
+            };
+            console.log(userData)
+
+            console.log("Registered")            
         }
     }
 }
@@ -24,51 +33,51 @@ export default{
 </script>
 
 <template>
-    
-    <div class="background">
-        <h1>Visit the most beautiful places with MTL Student Spot !</h1>
+    <div class="page-bg">
+    <h1>Visit the most beautiful places with MTL Student Spot !</h1>
 
-    <form>
+    <form @submit.prevent="handleSubmit" >
         <h2>Sign Up</h2>
         <div class="input-pair">
             <label for="">Last Name</label>
-            <input type="text" placeholder="Last Name">
+            <input type="text" placeholder="Last Name" v-model="lastName" />
         </div>
         <div class="input-pair">
             <label for="">First Name</label>
-            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="First Name" v-model="firstName"/>
         </div>
         <div class="input-pair">
             <label for="">Email</label>
-            <input type="email" placeholder="Email Adress">
+            <input type="email" placeholder="Email Adress" v-model="email"/>
         </div>
 
         <div class="input-pair">
             <label for="">Phone Number</label>
-            <input type="tel" placeholder="Last Name">
+            <input type="tel" placeholder="Last Name" v-model="phoneNumber"/>
         </div>
         <div class="input-pair">
             <label for="">Password</label>
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" v-model="password">
         </div>
         <div class="input-pair">
             <label for="">Confirm Password</label>
-            <input type="password" placeholder="Confirm Password">
-        </div>   
-        
-        <input class="submit" type="submit" value="Register">
-    </form>
-    </div>
-    
+            <input type="password" placeholder="Confirm Password" v-model="passwordConfirm">
+        </div>
+        <button class="submit" >Register</button>
+    </form> 
+    </div>   
 </template>
 
-<style>
+<style scoped>
 
-.background{
+.page-bg{
+    background-color: #A5BDD9;
 }
 
 h1{
-    margin: 4rem;
+    padding: 5rem;
+    font-size: 2rem;    
+    text-align: center;
 }
 
 h2{
@@ -77,9 +86,24 @@ h2{
 }
 
 form{
+    
     border: 2px solid black;
     padding : 20px;
-    margin: 0 30rem;
+    
+    /*width: 500px;
+    
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;*/
+}
+
+.input-pair{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 2rem;
+    gap: 0.1rem;
 }
 
 .submit{
@@ -88,4 +112,5 @@ form{
     margin-right: auto;
     display: block;
 }
+
 </style>

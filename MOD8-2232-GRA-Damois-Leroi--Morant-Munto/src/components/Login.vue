@@ -1,4 +1,14 @@
 <script>
+export default {
+    name : 'LoginForm',
+    data() {
+        return {
+            email: '',
+            password: '',
+        }
+    },
+
+}
 
 </script>
 
@@ -29,11 +39,11 @@
     </div>
 </template>
 
-<style>
+<style scoped >
 
 .title-container h1{
     padding: 5rem;
-    font-size: 2rem;
+    font-size: 2rem;    
     text-align: center;
 }
 
