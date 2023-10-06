@@ -48,6 +48,12 @@ const router = createRouter({
 
       component: () => import('../views/PlacesPage.vue')
 
+    },
+    {
+      path: '/places/add',
+      name: 'AddPlace',
+
+      component: () => import('../views/AddPageView.vue')
     }
   ]
 })
