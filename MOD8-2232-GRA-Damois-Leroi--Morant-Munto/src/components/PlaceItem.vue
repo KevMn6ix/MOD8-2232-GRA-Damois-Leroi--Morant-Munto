@@ -1,13 +1,14 @@
 <script setup>
 const placeSpecificity = defineProps({
     rating: Number,
-    id: Number
+    id: Number,
+    Type: String
 })
 </script>
 /** this component is used for display any kind place */
 <template>
     <section id="window">
-    <RouterLink  :to="'/places/' + placeSpecificity.id">
+    <RouterLink  :to="'/places/' + placeSpecificity.Type + '/' + placeSpecificity.id">
         <div id="big-div">
         <slot name="picture" id="picture">
     </slot>

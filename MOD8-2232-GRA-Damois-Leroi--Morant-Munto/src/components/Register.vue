@@ -1,4 +1,7 @@
 <script>
+import { RouterLink } from 'vue-router';
+import NavBar from './NavBar.vue';
+import BarOutsideHome from './BarOutsideHome.vue';
 
 export default{
     name: 'RegisterForm',
@@ -10,10 +13,9 @@ export default{
             phoneNumber: '',
             password: '',
             passwordConfirm: ''
-            
-        }
+        };
     },
-    methods : {
+    methods: {
         handleSubmit() {
             const userData = {
                 lastName: this.lastName,
@@ -23,16 +25,19 @@ export default{
                 password: this.password,
                 passwordConfirm: this.passwordConfirm
             };
-            console.log(userData)
-
-            console.log("Registered")            
+            console.log(userData);
+            console.log("Registered");
         }
-    }
+    },
+    components: { RouterLink, BarOutsideHome }
 }
 
 </script>
 
 <template>
+    <header>
+       <BarOutsideHome/>
+    </header>
     <div class="page-bg">
     <h1>Visit the most beautiful places with MTL Student Spot !</h1>
 
@@ -70,14 +75,41 @@ export default{
 
 <style scoped>
 
+* {
+    color: black;
+    @media (prefers-color-scheme: dark) {
+        color: white;
+        
+    }
+}
+
+header {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  @media (prefers-color-scheme: dark) {
+    header {
+  background-color: #a2c4ec9d;
+}
+  }
+}
+
+
+
 .page-bg{
     background-color: #A5BDD9;
+    @media (prefers-color-scheme: dark) {
+        background-color: #93ABC775;
+    }
 }
 
 h1{
     padding: 5rem;
     font-size: 2rem;    
     text-align: center;
+    background-color: white;
+    @media (prefers-color-scheme: dark) {
+        background-color: black;
+    }
 }
 
 h2{
@@ -89,7 +121,9 @@ form{
     
     border: 2px solid black;
     padding : 20px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /*width: 500px;
     
     height: 500px;
