@@ -4,14 +4,12 @@ import NavBar from '../components/NavBar.vue';
 import RowLandingPage from '../components/RowLandingPage.vue';
 import PlaceList from '../components/PlaceList.vue';
 import { RouterLink} from 'vue-router'
+import UsePlaceService from '../../server/services/places-service.js'
 const userInput = ref('');
-let id = ref(0);
-const placeList = ref([
-  {Id: ++id.value, Type: "restaurants", Title: "Brutopia", Address: "888 rjij", Rating: 2, HygieneRating: 5, AmbianceRating: 3, PriceRating: 5, Picture: "https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg"},
-  {Id: ++id.value, Type: "activities",Title: "cheval blanc", Address: "56656 fd", Rating: 3, HygieneRating: 3, AmbianceRating: 4, PriceRating: 2},
-  {Id: ++id.value, Type: "travel",Title: "nyx", Address: "86 sfd", Rating: 1, HygieneRating: 4, AmbianceRating: 4, PriceRating: 2},
-  {Id: ++id.value, Type: "restaurants",Title: "bnyx", Address: "86 sfd", Rating: 1, HygieneRating: 4, AmbianceRating: 4, PriceRating: 2, Picture:"https://cdn4.buysellads.net/uu/1/134955/1685040267-designdotdev5.jpg"}
-])
+const placeService = UsePlaceService();
+console.log(placeService.findPlaces())
+const tempListPlace = placeService.findPlace()
+console.log(tempListPlace)
 </script>
 
 <template>
@@ -30,7 +28,7 @@ const placeList = ref([
   </ul>
   </div>
   <div v-else id="research">
-    <PlaceList :searchTerms="userInput" :placeArray="placeList"/>
+    <PlaceList :searchTerms="userInput" :placeArray="placeService.findPlaces()"/>
   </div>
 
     

@@ -10,7 +10,7 @@ function sendUserInput() {
     emit('user-input', UserInput.value)
 }
 </script>
-/** This component is hte bar at the top of the screen */
+/** This component is the bar at the top of the screen */
 <template>
     <nav id="head-bar">
         <img src="../assets/logoMTL.png">

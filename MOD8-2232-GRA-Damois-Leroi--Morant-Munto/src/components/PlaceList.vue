@@ -1,9 +1,11 @@
 <script setup>
 import PlaceItem from './PlaceItem.vue';
+import UsePlaceService from '../../server/services/places-service';
 const propsList = defineProps({
     searchTerms: String,
     placeArray: Object
 })
+const placeService = UsePlaceService()
 </script>
 /** this is a component to display every place */
 <template>
@@ -11,9 +13,9 @@ const propsList = defineProps({
         Search For ...
     </h1>
     <ul>
-        <li v-for="place in propsList.placeArray.filter((p) => { 
+        <li v-for="place in placeService.findPlaces().filter((p) => { 
             return ((p.Title.substring(0, propsList.searchTerms.length)).toLowerCase() === propsList.searchTerms.toLowerCase())})">
-            <PlaceItem :id="place.Id" :rating="place.Rating">
+            <PlaceItem :id="place.Id" :rating="place.Rating" :type="place.Type">
                 <template #picture>
                     <img :src="place.Picture" alt="place's picture">
                 </template>

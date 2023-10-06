@@ -39,4 +39,7 @@ function displayUserInput() {
     <button @click="displayUserInput">
         Click me
     </button>
+    <button @click="sendUserInput">
+        Submit
+    </button>
 </template>
