@@ -9,4 +9,4 @@ npm install
 ```sh
 npm run dev
 ```
-# The commands need to be executed in the path ./MOD8-2232-GRA-Damois-Leroi--Morant-Munto this a file the file called MOD8-2232-GRA-Damois-Leroi--Morant-Munto
+# The commands need to be executed in the path ./MOD8-2232-GRA-Damois-Leroi--Morant-Munto this is a file inside of the file called MOD8-2232-GRA-Damois-Leroi--Morant-Munto
