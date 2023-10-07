@@ -14,3 +14,8 @@ const placeService = UsePlaceService()
     </h1>
     <TheAddPlaceForm @user-input="(termInputed) => {placeService.addPlace(termInputed.Title, termInputed.Address, termInputed.Type, termInputed.Picture); console.log(UsePlaceService().findPlaces())}"/>
 </template>
+<style scoped>
+*{
+    min-width: 333px;
+}
+</style>

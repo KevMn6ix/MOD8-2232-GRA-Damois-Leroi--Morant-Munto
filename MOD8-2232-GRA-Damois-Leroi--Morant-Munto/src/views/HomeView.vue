@@ -34,10 +34,10 @@ console.log(tempListPlace)
     
   </main>
 </template>
-<style>
+<style scoped>
 * {
-    --light-color-background-restaurant: #a2c4ec;
-    --light-color-background-travel: #A5BDD9;
+    --light-color-background-restaurant: #A5BDD9;
+    --light-color-background-travel: #a2c4ec;
     --light-color-background-activity: #9EB3CB;
     --dark-color-background-restaurant: #a2c4ec9d;
     --dark-color-background-travel: #a5bdd971;
@@ -46,8 +46,12 @@ console.log(tempListPlace)
     --color-background-travel: var(--light-color-background-travel);
     --color-background-activity: var(--light-color-background-activity);
     color: black;
-    
-
+    @media (prefers-color-scheme: dark) {
+      --color-background-restaurant: var(--dark-color-background-restaurant);
+        --color-background-travel: var(--dark-color-background-travel);
+        --color-background-activity: var(--dark-color-background-activity);
+        color: white;
+    }
 }
 main {
   display: flex;
@@ -59,12 +63,6 @@ header {
   padding-bottom: 1%;
 }
 @media (prefers-color-scheme: dark) {
-  * {
-        --color-background-restaurant: var(--dark-color-background-restaurant);
-        --color-background-travel: var(--dark-color-background-travel);
-        --color-background-activity: var(--dark-color-background-activity);
-        color: white;
-      }
     }
     header {
   background-color: var(--color-background-restaurant);
