@@ -12,4 +12,4 @@ npm run dev
 # The commands need to be executed in the path ./MOD8-2232-GRA-Damois-Leroi--Morant-Munto
 
 # bug
-The website doesn't display the comment taht are entered manually by the user due to field storing the place's id always store an undefined value.
+The website doesn't display the comment and the place that are entered manually by the user due to an error that turned every parameter'value to undefined.
