@@ -3,7 +3,7 @@
     import PlaceItem from './PlaceItem.vue'
     import { computed } from 'vue'
     import { useRoute } from 'vue-router';
-
+    import UsePlaceService from '../../server/services/places-service';
     const { type, placeArray } = defineProps({
         type: String,
         placeArray: Object
@@ -15,7 +15,11 @@
     const route = useRoute();   
     const type_local = route.params.types;
 
-    const searchresults = placeArray.filter((place) => {
+    const searchresults = UsePlaceService().findPlaces().filter((place) => {
+        console.log(place);
+        console.log(place.Type);
+        console.log(place.Type === type_local);
+        console.log(type_local);
         return place.Type === type_local;
     });
 

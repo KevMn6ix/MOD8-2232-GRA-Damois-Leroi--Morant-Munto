@@ -34,8 +34,8 @@ function displayUserInput() {
     <div id="form-nested-body">
     <select name="place-type" v-model="UserInput.Type">
         <option value="restaurant">Restaurant</option>
-        <option value="Activity">activity</option>
-        <option value="travel">travel</option> 
+        <option value="activity">Activity</option>
+        <option value="travel">Travel</option> 
     </select>
     <button @click="sendUserInput">
         Submit
