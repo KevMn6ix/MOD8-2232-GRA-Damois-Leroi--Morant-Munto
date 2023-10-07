@@ -9,7 +9,4 @@ npm install
 ```sh
 npm run dev
 ```
-# The commands need to be executed in the path ./MOD8-2232-GRA-Damois-Leroi--Morant-Munto
-
-# bug
-The website doesn't display the comment and the place that are entered manually by the user due to an error that turned every parameter'value to undefined.
+# The commands need to be executed in the path ./MOD8-2232-GRA-Damois-Leroi--Morant-Munto this a file the file called MOD8-2232-GRA-Damois-Leroi--Morant-Munto
