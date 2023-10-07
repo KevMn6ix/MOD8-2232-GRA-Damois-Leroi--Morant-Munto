@@ -19,11 +19,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-width: 252px;
 }
 @media (prefers-color-scheme: dark) {
-    #media-item
+    #rating-item
     {
-        border: solid white;}
+        border: solid white;
+    }
 }
 
 </style>

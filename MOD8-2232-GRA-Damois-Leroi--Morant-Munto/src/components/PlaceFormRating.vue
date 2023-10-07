@@ -137,4 +137,20 @@ textarea{
    
 }
 
+@media (prefers-color-scheme: dark) {
+    .star-container {
+        background-color: #a5bdd971;
+    }
+    .comment-container {
+        background-color: #a2c4ec9d;
+    }
+    .button-container {
+        background-color: #a5bdd971;
+    }
+    textarea {
+        background-color: black;
+        color: white;
+    }
+}
+
 </style>

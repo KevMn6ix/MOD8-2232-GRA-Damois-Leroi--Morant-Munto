@@ -34,3 +34,12 @@ a,
   }
 }
 */
+@media (prefers-color-scheme: dark) {
+  button {
+    color:black;
+  }
+  input {
+    color: white;
+    background-color: black;
+  }
+}

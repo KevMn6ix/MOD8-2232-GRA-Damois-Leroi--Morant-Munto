@@ -3,7 +3,7 @@
   import PlaceTypeList from '../components/PlaceTypeList.vue';
   import { ref } from 'vue';
   import { useRoute } from 'vue-router';
-
+  import BarOutsideHome from '../components/BarOutsideHome.vue'
   const id = ref(0);
   const placeList = ref([
     { Id: ++id.value, Type: "restaurant", Title: "Brutopia", Address: "888 rjij", Rating: 2, HygieneRating: 5, AmbianceRating: 3, PriceRating: 5, Picture: "https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" },
@@ -40,6 +40,9 @@
 </script>
 /** the purpose of this view is to display list of of all the place corresponding to a specific type*/
 <template>
+  <header>
+    <BarOutsideHome/>
+  </header>
     <div>
       <h1>{{ pageTitle }}</h1>
       <!-- Display Places -->

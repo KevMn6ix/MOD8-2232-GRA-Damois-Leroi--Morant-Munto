@@ -14,9 +14,6 @@ export default {
 </script>
 
 <template>
-    <header>
-        <BarOutsideHome/>
-    </header>
     <div class="title-container">
         <h1>Visit the most beautiful places with MTL Student Spot</h1>
     </div>
@@ -84,6 +81,18 @@ h2{
     display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+    .login-container {
+        background-color: #a5bdd957;
+    }
+    .form-container {
+        background-color: #a2c4ec75;
+    }
+    .button-container {
+        background-color: #9eb3cb48;
+    }
 }
 
 </style>

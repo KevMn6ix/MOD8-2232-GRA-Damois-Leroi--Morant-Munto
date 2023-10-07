@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import LoginPage from '../views/LoginPage.vue'
-
+import TheSubHeader from './TheSubHeader.vue';
 const emit = defineEmits(['user-input'])
 const UserInput = ref('')
 function sendUserInput() {
@@ -26,8 +26,10 @@ function sendUserInput() {
         </button>
     </div>
     </nav>
+    <div id="sub-header">
+    <TheSubHeader/></div>
 </template>
-<style>
+<style scoped>
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -40,6 +42,9 @@ nav {
     min-width: 178px;
     gap: 20px;
 }
+button {
+    color: black;
+}
 img {
     margin-left: 3px;
     height: 20px;
@@ -47,5 +52,8 @@ img {
 }
 input {
     flex-grow: 3;
+}
+#sub-header {
+    text-align: center;
 }
 </style>

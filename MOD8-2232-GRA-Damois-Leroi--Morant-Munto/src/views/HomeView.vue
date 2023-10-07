@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar.vue';
 import RowLandingPage from '../components/RowLandingPage.vue';
 import PlaceList from '../components/PlaceList.vue';
 import { RouterLink} from 'vue-router'
-import UsePlaceService from '../../server/services/places-service.js'
+import UsePlaceService from '../../server/services/places-service.js';
 const userInput = ref('');
 const placeService = UsePlaceService();
 console.log(placeService.findPlaces())
@@ -30,8 +30,6 @@ console.log(tempListPlace)
   <div v-else id="research">
     <PlaceList :searchTerms="userInput" :placeArray="placeService.findPlaces()"/>
   </div>
-
-    
   </main>
 </template>
 <style >
@@ -51,7 +49,7 @@ console.log(tempListPlace)
         --color-background-activity: var(--dark-color-background-activity); 
     }
 }
-* {
+template {
     
     
     color: black;

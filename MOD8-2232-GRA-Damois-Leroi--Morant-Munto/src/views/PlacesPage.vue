@@ -4,10 +4,10 @@
     import { useRoute } from 'vue-router'
     import UsePlaceService from '../../server/services/places-service';
     import TheRatingList from '../components/TheRatingList.vue';
-    import TheFooter from '../components/TheFooter.vue';
+    import BarOutsideHome from  '../components/BarOutsideHome.vue'
     const placeService = UsePlaceService();
     const placeList = placeService.findPlaces();
-    console.log(placeList)
+    //console.log(placeList)
     const route = useRoute()
     const id_place = Number(route.params.id)
 
@@ -29,7 +29,9 @@
 </script>
 
 <template>
-    
+    <header>
+        <BarOutsideHome/>
+    </header>
     <div>
         <h1>{{ place.Title }}</h1>
         <img :src="place.Picture" alt="Place Image">
@@ -54,5 +56,40 @@
         </div>
         <TheRatingList :idOfPlace="place.Id"/>
     </div>
-    <TheFooter/>
 </template>
+
+<style scoped>
+:root {
+  --light-color-background-restaurant: #A5BDD9;
+    --light-color-background-travel: #a2c4ec;
+    --light-color-background-activity: #9EB3CB;
+    --dark-color-background-restaurant: #a2c4ec9d;
+    --dark-color-background-travel: #a5bdd971;
+    --dark-color-background-activity: #9eb3cb0e;
+    --color-background-restaurant: var(--light-color-background-restaurant);
+    --color-background-travel: var(--light-color-background-travel);
+    --color-background-activity: var(--light-color-background-activity);
+    @media (prefers-color-scheme: dark) {
+      --color-background-restaurant: var(--dark-color-background-restaurant);
+        --color-background-travel: var(--dark-color-background-travel);
+        --color-background-activity: var(--dark-color-background-activity); 
+    }
+}
+img {
+    min-width: 75px;
+    min-height: 75px;
+    height: 75%;
+    width: 75%;
+    max-width: 200px;
+    max-height: 200px;
+}
+div {
+    text-align: center;
+}
+h1 {
+    background-color: var(--color-background-travel);
+}
+h2 {
+    background-color: var(--color-background-restaurant);
+}
+</style>

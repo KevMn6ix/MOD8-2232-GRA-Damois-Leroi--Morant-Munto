@@ -5,9 +5,15 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template >
   <RouterView />
+  
 </template>
 
 <style scoped>
+template {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;

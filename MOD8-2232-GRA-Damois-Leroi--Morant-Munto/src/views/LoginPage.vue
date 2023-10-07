@@ -4,6 +4,9 @@ import BarOutsideHome from '../components/BarOutsideHome.vue';
 </script>
 
 <template>
+<header>
+    <BarOutsideHome/>
+</header>
     <Login />
 </template>
 

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import LoginPage from '../views/LoginPage.vue'
 import { RouterLink } from 'vue-router';
-
+import TheSubHeader from './TheSubHeader.vue';
 const emit = defineEmits(['user-input'])
 const UserInput = ref('')
 function sendUserInput() {
@@ -29,6 +29,8 @@ function sendUserInput() {
         </button>
     </div>
 </nav>
+<div id="sub-header">
+<TheSubHeader/></div>
 </template>
 <style>
 nav {
@@ -50,5 +52,8 @@ img {
 }
 input {
     flex-grow: 3;
+}
+#sub-header {
+    text-align: center;
 }
 </style>
