@@ -36,7 +36,7 @@ const router = createRouter({
       component: () => import('../views/PlaceListView.vue')
     },
     {
-      path: '/places/review',
+      path: '/places/review/:id',
       name : 'review',
 
       component: () => import('../views/PlaceReview.vue')

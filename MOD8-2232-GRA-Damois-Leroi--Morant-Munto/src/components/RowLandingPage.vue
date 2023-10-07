@@ -9,7 +9,7 @@ const rowProps = defineProps({
 </script>
 <template>
     <RouterLink :to="/places/ + rowProps.textId">
-    <h2 :id="rowProps.textId">
+    <h2 :id="'sub-' + rowProps.textId">
 
         {{ rowProps.textTitle }}
     </h2>
@@ -22,7 +22,7 @@ const rowProps = defineProps({
         color: white;
     }
 }
-#travel {
+#sub-travel {
     text-align: start;
 }
 </style>

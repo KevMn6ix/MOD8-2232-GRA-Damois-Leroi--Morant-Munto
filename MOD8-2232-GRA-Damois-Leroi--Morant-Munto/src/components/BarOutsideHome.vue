@@ -28,8 +28,7 @@ function sendUserInput() {
             <router-link to="/register">Sign In</router-link>
         </button>
     </div>
-    </nav>
-    <router-link to="/places/review" name='placereview'> review</router-link>
+</nav>
 </template>
 <style>
 nav {

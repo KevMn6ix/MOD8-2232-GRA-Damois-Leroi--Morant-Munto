@@ -43,6 +43,7 @@ img {
 ul {
     display: flex;
     flex-direction: column;
+    
 }
 @media (max-width: 387) {
     ul li {

@@ -34,9 +34,9 @@ console.log(tempListPlace)
     
   </main>
 </template>
-<style scoped>
-* {
-    --light-color-background-restaurant: #A5BDD9;
+<style >
+:root {
+  --light-color-background-restaurant: #A5BDD9;
     --light-color-background-travel: #a2c4ec;
     --light-color-background-activity: #9EB3CB;
     --dark-color-background-restaurant: #a2c4ec9d;
@@ -45,11 +45,17 @@ console.log(tempListPlace)
     --color-background-restaurant: var(--light-color-background-restaurant);
     --color-background-travel: var(--light-color-background-travel);
     --color-background-activity: var(--light-color-background-activity);
-    color: black;
     @media (prefers-color-scheme: dark) {
       --color-background-restaurant: var(--dark-color-background-restaurant);
         --color-background-travel: var(--dark-color-background-travel);
-        --color-background-activity: var(--dark-color-background-activity);
+        --color-background-activity: var(--dark-color-background-activity); 
+    }
+}
+* {
+    
+    
+    color: black;
+    @media (prefers-color-scheme: dark) {
         color: white;
     }
 }

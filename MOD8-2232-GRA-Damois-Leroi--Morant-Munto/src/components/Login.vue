@@ -1,18 +1,22 @@
 <script>
+import BarOutsideHome from './BarOutsideHome.vue';
 export default {
-    name : 'LoginForm',
+    name: 'LoginForm',
     data() {
         return {
             email: '',
             password: '',
-        }
+        };
     },
-
+    components: { BarOutsideHome }
 }
 
 </script>
 
 <template>
+    <header>
+        <BarOutsideHome/>
+    </header>
     <div class="title-container">
         <h1>Visit the most beautiful places with MTL Student Spot</h1>
     </div>
