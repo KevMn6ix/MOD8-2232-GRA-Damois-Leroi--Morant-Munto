@@ -1,6 +1,6 @@
 <script>
 import StarRating from './StarRating.vue';
-
+import UsePlaceService from '../../server/services/places-service';
 export default {
     name: 'PlaceFormRating',
     data() {
@@ -42,17 +42,22 @@ export default {
         setComment(data){
             this.placeRate.comment = data;
             console.log(this.placeRate);
+        },
+        enterRating() {
+            UsePlaceService().addRating(this.$route.params.id, Object.is(NaN, parseInt(this.placeRate.hygieneRating)) ? 1 : parseInt(this.placeRate.hygieneRating), Object.is(NaN, parseInt(this.placeRate.ambianceRating)) ? 1 : parseInt(this.placeRate.ambianceRating), Object.is(NaN, parseInt(this.placeRate.priceRating)) ? 1 : parseInt(this.placeRate.priceRating), Object.is(undefined, this.placeRate.comment) ? "" : this.placeRate.comment);
+            console.log(UsePlaceService().findRatings())
+        },
+        referncePlace(id) {
+            return
         }
     },
     components: { StarRating }
 }
-
-
 </script>
 
 <template>
     <div class="place-container">
-        Place name : {{ }}
+        Please enter a comment
     </div>    
     <div>
         <div class="star-container">
@@ -75,7 +80,7 @@ export default {
             <textarea placeholder="What do you think about that ?" v-model="comment"></textarea>
         </div>
         <div class="button-container">
-            <button @click="setComment(comment)">Save Rating</button>
+            <button @click="() => {setComment(comment); enterRating()}">Save Rating</button>
         </div>
     </div>
 </template>

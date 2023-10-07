@@ -26,7 +26,6 @@ function sendUserInput() {
         </button>
     </div>
     </nav>
-    <router-link to="/places/review" name='placereview'> review</router-link>
 </template>
 <style>
 nav {

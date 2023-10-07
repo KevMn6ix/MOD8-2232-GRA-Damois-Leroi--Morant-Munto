@@ -2,20 +2,17 @@
 
     import { ref, computed } from 'vue'
     import { useRoute } from 'vue-router'
-
-    const id = ref(0);
-    const placeList = ref([
-        { Id: ++id.value, Type: "restaurant", Title: "Brutopia", Address: "888 rjij", Rating: 2, HygieneRating: 5, AmbianceRating: 3, PriceRating: 5, Picture: "https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" },
-        { Id: ++id.value, Type: "restaurant", Title: "cheval blanc", Address: "56656 fd", Rating: 3, HygieneRating: 3, AmbianceRating: 4, PriceRating: 2 },
-        { Id: ++id.value, Type: "activity", Title: "nyx", Address: "86 sfd", Rating: 1, HygieneRating: 4, AmbianceRating: 4, PriceRating: 2 },
-        { Id: ++id.value, Type: "travel", Title: "bnyx", Address: "86 sfd", Rating: 1, HygieneRating: 4, AmbianceRating: 4, PriceRating: 2, Picture: "https://cdn4.buysellads.net/uu/1/134955/1685040267-designdotdev5.jpg" }
-    ]);
-
+    import UsePlaceService from '../../server/services/places-service';
+    import TheRatingList from '../components/TheRatingList.vue';
+    import TheFooter from '../components/TheFooter.vue';
+    const placeService = UsePlaceService();
+    const placeList = placeService.findPlaces();
+    console.log(placeList)
     const route = useRoute()
     const id_place = Number(route.params.id)
 
     const place = computed(() => {
-        return placeList.value.find((p) => p.Id === id_place);
+        return placeList.find((p) => p.Id === id_place);
     });
 
     const calculateTotalRating = (place) => {
@@ -52,6 +49,10 @@
             <h2>Total Rating</h2>
             <p>{{ calculateTotalRating(place) }}</p>
         </div>
+        <div>
+            <router-link :to="'/places/review/' + place.Id" name='placereview'> review</router-link>
+        </div>
+        <TheRatingList :idOfPlace="place.Id"/>
     </div>
-
+    <TheFooter/>
 </template>
