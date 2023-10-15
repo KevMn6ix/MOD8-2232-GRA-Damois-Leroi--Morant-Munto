@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router';
 import NavBar from './NavBar.vue';
 import BarOutsideHome from './BarOutsideHome.vue';
+import AuthentificationService from '@/services/AuthentificationService';
 
 export default{
     name: 'RegisterForm',
@@ -16,6 +17,18 @@ export default{
         };
     },
     methods: {
+        async register () {
+            const response = await AuthentificationService.register({
+                lastName: this.lastName,
+                firstName: this.firstName,
+                email: this.email,
+                phoneNumber: this.phoneNumber,
+                password: this.password,
+                passwordConfirm: this.passwordConfirm
+            })
+            console.log(response);
+        } ,
+
         handleSubmit() {
             const userData = {
                 lastName: this.lastName,
@@ -41,7 +54,7 @@ export default{
     <div class="page-bg">
     <h1>Visit the most beautiful places with MTL Student Spot !</h1>
 
-    <form @submit.prevent="handleSubmit" >
+    <form @submit.prevent="register" >
         <h2>Sign Up</h2>
         <div class="input-pair">
             <label for="">Last Name</label>
