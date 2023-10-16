@@ -16,7 +16,7 @@ require('./routes')(app)
 
 // Get all the user
 app.get('/', (req, res, next) => {
-  var sql = "SELECT * FROM user "
+  var sql = "SELECT * FROM users "
   connection.query(sql , (err, results) => {
     if (err) {
       console.error(err);
