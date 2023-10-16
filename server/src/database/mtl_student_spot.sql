@@ -25,6 +25,12 @@ INSERT INTO `mtl_student_spot_database`.`users` (`user_id`, `last_name`, `first_
 INSERT INTO `mtl_student_spot_database`.`users` (`user_id`, `last_name`, `first_name`, `email`, `phone_number`, `password`) VALUES ('2', 'Damois', 'Quentin', 'damoisquentin@gmail.com', '0612345678', 'qsdfgh12');
 INSERT INTO `mtl_student_spot_database`.`users` (`user_id`, `last_name`, `first_name`, `email`, `phone_number`, `password`) VALUES ('3', 'Leroi--Morant', 'Olivier', 'olivier@gmail.com', '0678541587', 'wxcvbn12');
 
+DROP TABLE IF EXISTS `rating`;
+
+
+
+
+
 -- Dumping structure for table mtl_student_spot_database.places
 DROP TABLE IF EXISTS `places`;
 
@@ -45,3 +51,18 @@ INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `pla
 INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `place_address`, `photo_url`, `place_type`) VALUES ('3', 'Mont Royal', 'Colline du Mont Royal', 'urlMroyal', 'Travel');
 
 
+CREATE TABLE `rating` (
+  `id` int NOT NULL,
+  `idPlace` int NOT NULL,
+  `CommentRate` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `HygieneRating` int,
+  `AmbianceRating` int,
+  `PriceRating` int,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`idPlace`) REFERENCES `places`(`place_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO `mtl_student_spot_database`.`rating` (`id`, `idPlace`, `CommentRate`, `HygieneRating`, `AmbianceRating`, `PriceRating`) VALUES ('1', '3', 'I like to go hiking here.', '3', '3', '3');
+INSERT INTO `mtl_student_spot_database`.`rating` (`id`, `idPlace`, `CommentRate`, `HygieneRating`, `AmbianceRating`, `PriceRating`) VALUES ('2','1', 'They make my favorite coffee.', '5', '2', '2');
+INSERT INTO `mtl_student_spot_database`.`rating` (`id`, `idPlace`, `CommentRate`, `HygieneRating`, `AmbianceRating`, `PriceRating`) VALUES ('3', '2', 'I lost one hundred dollar here.', '4', '4', '1');
