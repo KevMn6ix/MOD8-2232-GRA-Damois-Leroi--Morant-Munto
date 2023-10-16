@@ -23,7 +23,7 @@ module.exports = {
         const password = req.body.password;
         //const confirmPassword = req.body.confirmPassword;
       
-        var sql = "INSERT INTO user (user_id, last_name, first_name, email, phone_number, password) VALUES (?,?,?,?,?,?)"
+        var sql = "INSERT INTO users (user_id, last_name, first_name, email, phone_number, password) VALUES (?,?,?,?,?,?)"
         connection.query(sql, [user_id, last_name, first_name, email, phone_number, password],
           (err, result) => {
             console.log(err);
@@ -39,7 +39,7 @@ module.exports = {
         const email = req.body.email
         const password = req.body.password
   
-        var sql = "SELECT * FROM user WHERE email = ? AND password = ?"
+        var sql = "SELECT * FROM users WHERE email = ? AND password = ?"
         connection.query(sql, [email, password],
             (err, result) => {
                 if(err) {
@@ -55,3 +55,37 @@ module.exports = {
         );
     }
 }
+
+
+/*
+HELPERS 
+
+Register : 
+{
+    "user_id": "4",
+    "last_name": "Toto",
+    "first_name": "toto",
+    "email": "toto@gmail.com",
+    "phone_number": "0612345678",
+    "password": "toto123456",
+}
+
+Login: 
+
+Good Login
+{
+    "email": "muntokevin@gmail.com",
+    "password": "azerty12"
+}
+
+Output : Connected
+
+Bad Login
+
+{
+    "email": "muntokevin@gmail.com",
+    "password": "aaaaa12"
+}
+
+Output : Wrong username/password combination !
+*/
