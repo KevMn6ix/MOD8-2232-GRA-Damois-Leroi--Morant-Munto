@@ -29,6 +29,21 @@ app.get('/', (req, res, next) => {
   
 })
 
+
+//get the list of place
+app.get('/places', (req, res) => {
+  const sql = 'SELECT * FROM places';
+  connection.query(sql , (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Erreur lors de la requête à la base de données');
+      return next(err);
+    }
+    res.send(results);
+    //res.send('Hello ');
+  });
+})
+
 const port = 8081
 //app.listen(process.env.PORT || 8081)
 
