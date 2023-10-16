@@ -28,11 +28,10 @@ module.exports = {
         const hygieneRating = req.body.hygieneRating;
         const ambianceRating = req.body.ambianceRating;
         const priceRating = req.body.priceRating;
-        const rating = req.body.rating;
         const commentary = req.body.commentary;
 
-        var sql = "INSERT INTO rating (id, place_id, rating, hygiene_rating, ambiance_rating, price_rating, commentary) VALUES (?,?,?,?,?,?,?)"
-        connection.query(sql, [id, IdPlace, rating, hygieneRating,  ambianceRating, priceRating, commentary],
+        var sql = "INSERT INTO rating (id, place_id, CommentRate, HygieneRating, AmbianceRating, PriceRating) VALUES (?,?,?,?,?,?)"
+        connection.query(sql, [id, IdPlace, commentary, hygieneRating,  ambianceRating, priceRating],
             (err, result) => {
                 console.log(err);
             }
