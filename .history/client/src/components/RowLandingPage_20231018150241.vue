@@ -38,7 +38,7 @@ const rowProps = defineProps({
 
 #sub-travel, #sub-restaurant, #sub-activity{
 
-    color: white;
+    color: rgb(71, 71, 74);
     font-weight: bold;
     font-size: 50px;
 

@@ -233,7 +233,7 @@ ul#browse li > * {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: inherit; 
+    
     opacity: 0.40; 
     pointer-events: none;
 }

@@ -2,11 +2,9 @@
 import { RouterLink } from 'vue-router';
 </script>
 <template>
-  <RouterLink to="/places/add">
     <button>
-       Add a Place
+      <RouterLink to="/places/add"> Add a Place</RouterLink>
     </button>
-  </RouterLink>
 </template>
 <style scoped>
 :root {

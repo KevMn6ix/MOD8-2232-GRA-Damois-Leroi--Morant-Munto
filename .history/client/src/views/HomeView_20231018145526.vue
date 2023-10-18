@@ -84,7 +84,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--color-background-header);
+    
     color: var(--text-color-default);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-bottom: 2px solid rgba(0, 0, 0, 0.1); 
@@ -93,6 +93,7 @@ header {
 header > div:last-child {
     display: flex;
     gap: 1rem;  
+    background-color: var(--color-background-header);
    
     a, button {
         padding: 0.5rem 1rem;  
@@ -170,7 +171,6 @@ ul#browse li {
   border-left: 4px solid #fff;
   border-bottom: 0px;
   transition: background-color 0.3s ease;
-  background-color: rgba(2, 7, 16, 0.84);  
   height: 350px;
   background-size: cover;
   display: flex;

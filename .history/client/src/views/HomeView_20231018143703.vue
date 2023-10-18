@@ -59,8 +59,8 @@ body, html {
 }
 
 :root {
-    --color-background-header: #9fbad4;
-    --color-background-default: #9fbad4;
+    --color-background-header: #A5BDD9;
+    --color-background-default: #A5BDD9;
     --color-background-travel: #a2c4ec;
     --color-background-activity: #9EB3CB;
     --text-color-default: #FFF;
@@ -71,7 +71,7 @@ body, html {
 /* Dark Mode Variables */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background-header: #9fbad4;  /* Adjusted for contrast in dark mode */
+        --color-background-header: #A5BDD9;  /* Adjusted for contrast in dark mode */
         --text-color-default: #FFF;
         --border-color-place: #000;
         /* The blue shades remain the same as you wanted */
@@ -119,7 +119,6 @@ header > div:last-child {
 
 /* Main content styles */
 main {
-    
     background-color: var(--color-background-default);
     text-align: center;
     padding: 2rem 0;
@@ -165,12 +164,10 @@ ul#browse {
 ul#browse li {
   padding: 0;  
   margin: 0px;  
-  border: 8px solid #fff;
-  border-right: 4px solid #fff;
-  border-left: 4px solid #fff;
+  border: 5px solid #fff;
+ 
   border-bottom: 0px;
   transition: background-color 0.3s ease;
-  background-color: rgba(2, 7, 16, 0.84);  
   height: 350px;
   background-size: cover;
   display: flex;
@@ -182,7 +179,7 @@ ul#browse li {
 
 ul#browse li#activity{
 
-    border-bottom: 8px solid #fff;
+    border-bottom: 5px solid #fff;
 
 }
 
@@ -190,15 +187,13 @@ ul#browse li#activity{
 
     ul#browse li{
 
-        border: 8px solid #5c5a5a;
-        border-right: 4px solid #5c5a5a;
-        border-left: 4px solid #5c5a5a;
+        border: 5px solid #1d1d1d;
 
     }
 
     ul#browse li#activity{
 
-        border-bottom: 8px solid #5c5a5a;
+        border-bottom: 5px solid #000;
 
     }
 

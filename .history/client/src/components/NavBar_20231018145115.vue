@@ -39,7 +39,7 @@ function sendUserInput() {
 
     --color-navbar: #f0f2f5;
     --text-navbar-color-default: #000;
-    --color-input: #9fbad4;
+    --color-input: #5c5a5a;
     --button-border: #646464;
     --color-button: #fff;
     --button-hover: #7faedc;

@@ -170,7 +170,6 @@ ul#browse li {
   border-left: 4px solid #fff;
   border-bottom: 0px;
   transition: background-color 0.3s ease;
-  background-color: rgba(2, 7, 16, 0.84);  
   height: 350px;
   background-size: cover;
   display: flex;
@@ -233,7 +232,7 @@ ul#browse li > * {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: inherit; 
+    
     opacity: 0.40; 
     pointer-events: none;
 }
@@ -241,6 +240,7 @@ ul#browse li > * {
 
 #restaurant {
     background-image: url('../assets/restaurant.jpg');
+    
     background-color: var(--color-background-default);
     background-position: center;
     justify-content: flex-end;

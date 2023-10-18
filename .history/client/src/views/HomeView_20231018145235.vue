@@ -59,7 +59,7 @@ body, html {
 }
 
 :root {
-    --color-background-header: #9fbad4;
+    --color-background-header: #A5BDD9;
     --color-background-default: #9fbad4;
     --color-background-travel: #a2c4ec;
     --color-background-activity: #9EB3CB;
@@ -71,7 +71,7 @@ body, html {
 /* Dark Mode Variables */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background-header: #9fbad4;  /* Adjusted for contrast in dark mode */
+        --color-background-header: #A5BDD9;  /* Adjusted for contrast in dark mode */
         --text-color-default: #FFF;
         --border-color-place: #000;
         /* The blue shades remain the same as you wanted */
@@ -170,7 +170,6 @@ ul#browse li {
   border-left: 4px solid #fff;
   border-bottom: 0px;
   transition: background-color 0.3s ease;
-  background-color: rgba(2, 7, 16, 0.84);  
   height: 350px;
   background-size: cover;
   display: flex;

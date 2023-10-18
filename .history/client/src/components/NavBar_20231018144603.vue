@@ -37,9 +37,9 @@ function sendUserInput() {
 
 :root{
 
-    --color-navbar: #f0f2f5;
+    --color-navbar: #9fbad4;
     --text-navbar-color-default: #000;
-    --color-input: #9fbad4;
+    --color-input: #f0f2f5;
     --button-border: #646464;
     --color-button: #fff;
     --button-hover: #7faedc;
@@ -74,8 +74,8 @@ nav {
 }
 
 button {
-    background-color: var(--color-button);
-    color: var(--text-navbar-color-default);
+    background-color: var(--text-navbar-color-default);
+    color: #FFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;

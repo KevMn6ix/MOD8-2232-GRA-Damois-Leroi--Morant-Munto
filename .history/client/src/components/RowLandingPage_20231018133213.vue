@@ -15,9 +15,9 @@ const rowProps = defineProps({
     </h2>
     </RouterLink>
 </template>
-<style scoped>
+<style >
 * {
-    color: white;
+    color: black;
     @media (prefers-color-scheme: dark) {
         color: white;
         

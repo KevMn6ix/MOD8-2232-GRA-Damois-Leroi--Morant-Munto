@@ -18,16 +18,12 @@ function sendUserInput() {
         </h3>
         <input type="text" v-model="UserInput" @input="sendUserInput">
         <div>
-        <router-link to='/login'>
         <button>
-            Log In
+            <router-link to='/login'>Log In</router-link>
         </button>
-        </router-link>
-        <router-link to="/register">
         <button>
-            Sign In
+            <router-link to="/register">Sign In</router-link>
         </button>
-        </router-link>
     </div>
     </nav>
     <div id="sub-header">
@@ -37,12 +33,11 @@ function sendUserInput() {
 
 :root{
 
-    --color-navbar: #f0f2f5;
+    --color-navbar: #FFF;
     --text-navbar-color-default: #000;
-    --color-input: #9fbad4;
+    --color-input: #A5BDD9;
     --button-border: #646464;
     --color-button: #fff;
-    --button-hover: #7faedc;
 }
 
 @media (prefers-color-scheme: dark){
@@ -53,8 +48,7 @@ function sendUserInput() {
         --color-navbar: #211f1f;
         --color-input: #312e2e;
         --button-border: #646464;
-        --color-button: #312e2e;
-        --button-hover: #646464;
+        --color-button: #823;
 
     }
 
@@ -75,7 +69,7 @@ nav {
 
 button {
     background-color: var(--color-button);
-    color: var(--text-navbar-color-default);
+    color: #FFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -86,11 +80,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--button-hover);
-}
-
-button:visited {
-    color: white; /* Set the text color to yellow when the button is active (clicked) */
+    background-color: #7faedc;
 }
 
 img {

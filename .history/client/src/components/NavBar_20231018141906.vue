@@ -23,11 +23,9 @@ function sendUserInput() {
             Log In
         </button>
         </router-link>
-        <router-link to="/register">
         <button>
-            Sign In
+            <router-link to="/register">Sign In</router-link>
         </button>
-        </router-link>
     </div>
     </nav>
     <div id="sub-header">
@@ -37,9 +35,9 @@ function sendUserInput() {
 
 :root{
 
-    --color-navbar: #f0f2f5;
+    --color-navbar: #9fbad4;
     --text-navbar-color-default: #000;
-    --color-input: #9fbad4;
+    --color-input: #FFF;
     --button-border: #646464;
     --color-button: #fff;
     --button-hover: #7faedc;
@@ -75,7 +73,7 @@ nav {
 
 button {
     background-color: var(--color-button);
-    color: var(--text-navbar-color-default);
+    color: #FFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;

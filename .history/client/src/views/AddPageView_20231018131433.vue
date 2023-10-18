@@ -19,7 +19,7 @@ const placeService = UsePlaceService()
     min-width: 333px;
 }
 
-header >*{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;

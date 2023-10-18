@@ -17,7 +17,7 @@ const rowProps = defineProps({
 </template>
 <style scoped>
 * {
-    color: white;
+    color: black;
     @media (prefers-color-scheme: dark) {
         color: white;
         
@@ -38,7 +38,7 @@ const rowProps = defineProps({
 
 #sub-travel, #sub-restaurant, #sub-activity{
 
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 50px;
 

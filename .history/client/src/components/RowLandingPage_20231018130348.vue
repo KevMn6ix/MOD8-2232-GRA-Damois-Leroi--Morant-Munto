@@ -17,7 +17,7 @@ const rowProps = defineProps({
 </template>
 <style scoped>
 * {
-    color: white;
+    color: black;
     @media (prefers-color-scheme: dark) {
         color: white;
         
