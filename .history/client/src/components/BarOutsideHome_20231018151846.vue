@@ -38,65 +38,29 @@ function sendUserInput() {
 
 </template>
 <style scoped>
-
-:root{
-
---color-navbar: #9fbad4;
---text-navbar-color-default: #000;
---color-input: #9fbad4;
---button-border: #646464;
---color-button: #fff;
---button-hover: #7faedc;
-}
-
-@media (prefers-color-scheme: dark){
-
-:root{
-
-    --text-navbar-color-default: #FFF;
-    --color-navbar: #211f1f;
-    --color-input: #312e2e;
-    --button-border: #646464;
-    --color-button: #312e2e;
-    --button-hover: #646464;
-
-}
-
-}
-
-#head-bar {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--color-navbar);
+    background-color: var(--color-background-header);
+    color: var(--text-color-default);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid white;
-}
-
-h3{
-
-color: var(--text-navbar-color-default);
-
+    border-bottom: 10px solid rgba(0, 0, 0, 0.1);
 }
 
 button {
-    background-color: var(--color-button);
-    color: var(--text-navbar-color-default);
+    background-color: var(--color-background-travel);
+    color: #FFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border: 2px solid var(--button-border);
 }
 
 button:hover {
-    background-color: var(--button-hover);
-}
-
-button:visited {
-    color: white; /* Set the text color to yellow when the button is active (clicked) */
+    background-color: #7faedc;
 }
 
 img {

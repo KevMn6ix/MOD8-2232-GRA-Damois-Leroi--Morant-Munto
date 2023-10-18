@@ -83,6 +83,7 @@ color: var(--text-navbar-color-default);
 button {
     background-color: var(--color-button);
     color: var(--text-navbar-color-default);
+    color: #FFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -102,7 +103,6 @@ button:visited {
 img {
     height: 20px;
     width: 16px;
-    margin-left: 3px;
 }
 
 input {

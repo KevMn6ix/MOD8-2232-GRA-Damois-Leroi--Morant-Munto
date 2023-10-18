@@ -18,30 +18,21 @@ function displayUserInput() {
 </script>
 <template>
     <div id="form-body">
-    <label>
-        Place's name
-    </label>
     <AddPlaceInput type="text" @user-input="(termInputed) => {UserInput.Title = termInputed}">
-        
+        Place's name
     </AddPlaceInput>
-    <label>
-        Place's address
-    </label>
     <AddPlaceInput type="text" @user-input="(termInputed) => {UserInput.Address = termInputed}">
-        
+        Place's address
     </AddPlaceInput>
-    <label>
-        Place's link to a picture
-    </label>
     <AddPlaceInput type="text" @user-input="(termInputed) => {UserInput.Picture = termInputed}">
-        
+        Place's link to a picture
     </AddPlaceInput>
     
-    <label for="place-type" >
+    <label for="place-type">
         Select the type of place
     </label>
     <div id="form-nested-body">
-    <select name="place-type" v-model="UserInput.Type" id="place-type">
+    <select name="place-type" v-model="UserInput.Type">
         <option value="restaurant">Restaurant</option>
         <option value="activity">Activity</option>
         <option value="travel">Travel</option> 
@@ -82,32 +73,16 @@ function displayUserInput() {
     min-width: 333px;
     
 }
-#form-body >* {
-  
+#form-body {
+    background-color: var(--color-background-activity);
     display: flex;
     flex-direction: column;
     color: white;
     justify-content: center;
-    
     @media (prefers-color-scheme: dark) {
         color: white;
     }
-
 }
-label{
-
-    margin-top: 20px;
-
-}
-
-#place-type{
-
-    margin-bottom: 20px;
-    background-color: var(--color-button);
-    color: var(--text-navbar-color-default);
-
-}
-
 button {
     min-width: 50px;
     width: 15%;

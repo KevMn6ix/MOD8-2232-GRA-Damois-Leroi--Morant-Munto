@@ -78,7 +78,7 @@ main{
 
 h1{
 
-    margin: 20PX;
+    margin: 10PX;
 
 }
 

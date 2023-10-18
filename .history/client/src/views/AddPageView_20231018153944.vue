@@ -59,8 +59,6 @@ const placeService = UsePlaceService()
 }
 }
 
-
-
 main{
 
     color: white;
@@ -71,14 +69,7 @@ main{
     background-position: 30%;  
     position: relative;
     z-index: 1;
-    text-align: center;
     
-
-}
-
-h1{
-
-    margin: 20PX;
 
 }
 

@@ -59,11 +59,8 @@ const placeService = UsePlaceService()
 }
 }
 
-
-
 main{
 
-    color: white;
     margin-top: 10px;
     background-image: url('../assets/montrealbynight.jpg');
     background-size: 1520px; 
@@ -71,20 +68,13 @@ main{
     background-position: 30%;  
     position: relative;
     z-index: 1;
-    text-align: center;
     
-
-}
-
-h1{
-
-    margin: 20PX;
 
 }
 
 main::before{
 
-    
+    color: var(--text-navbar-color-default);
     content: '';
     display: block;
     position: absolute;

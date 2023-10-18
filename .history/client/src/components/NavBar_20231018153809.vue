@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import LoginPage from '../views/LoginPage.vue'
-import { RouterLink } from 'vue-router';
 import TheSubHeader from './TheSubHeader.vue';
 const emit = defineEmits(['user-input'])
 const UserInput = ref('')
@@ -10,16 +9,14 @@ function sendUserInput() {
     emit('user-input', UserInput.value)
 }
 </script>
-/** This component is the bar at the top of the screen */
+/** This component is hte bar at the top of the screen */
 <template>
     <nav id="head-bar">
         <img src="../assets/logoMTL.png">
-        <RouterLink to="/">
         <h3>
             MTLSudentSpot
         </h3>
-        </RouterLink>
-       
+        <input type="text" v-model="UserInput" @input="sendUserInput">
         <div>
         <router-link to='/login'>
         <button>
@@ -28,55 +25,60 @@ function sendUserInput() {
         </router-link>
         <router-link to="/register">
         <button>
-           Sign In
+            Sign In
         </button>
-    </router-link>
+        </router-link>
     </div>
     <div id="sub-header">
-<TheSubHeader/></div>
-</nav>
-
+    <TheSubHeader/></div>
+    </nav>
+    
 </template>
-<style scoped>
+<style>
 
 :root{
 
---color-navbar: #9fbad4;
---text-navbar-color-default: #000;
---color-input: #9fbad4;
---button-border: #646464;
---color-button: #fff;
---button-hover: #7faedc;
+    --color-navbar: #9fbad4;
+    --text-navbar-color-default: #000;
+    --color-input: #white;
+    --button-border: #646464;
+    --color-button: #fff;
+    --button-hover: #7faedc;
 }
 
 @media (prefers-color-scheme: dark){
 
-:root{
+    :root{
 
-    --text-navbar-color-default: #FFF;
-    --color-navbar: #211f1f;
-    --color-input: #312e2e;
-    --button-border: #646464;
-    --color-button: #312e2e;
-    --button-hover: #646464;
+        --text-navbar-color-default: #FFF;
+        --color-navbar: #211f1f;
+        --color-input: #312e2e;
+        --button-border: #646464;
+        --color-button: #312e2e;
+        --button-hover: #646464;
+
+    }
 
 }
 
-}
-
-#head-bar {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
     background-color: var(--color-navbar);
+    padding: 1rem 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 2px solid white;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 2px solid var(--button-border);
+    margin: 5px;
+    flex-grow: 3;
+    gap: 20px;
 }
 
 h3{
 
-color: var(--text-navbar-color-default);
+    color: var(--text-navbar-color-default);
 
 }
 
@@ -88,6 +90,7 @@ button {
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 3px;
     border: 2px solid var(--button-border);
 }
 
@@ -102,7 +105,6 @@ button:visited {
 img {
     height: 20px;
     width: 16px;
-    margin-left: 3px;
 }
 
 input {
@@ -110,8 +112,9 @@ input {
     padding: 0.5rem;
     border: none;
     border-radius: 0.25rem;
-    background-color: var(--color-background-default);
-    color: var(--text-color-default);
+    background-color: var(--color-input);
+    color: var(--text-navbar-color-default);
+    border: 2px solid var(--button-border);
     margin: 0 1rem;
 }
 

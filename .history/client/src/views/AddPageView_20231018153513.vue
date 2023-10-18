@@ -35,35 +35,8 @@ const placeService = UsePlaceService()
 </template>
 <style scoped>
 
-:root{
-
---color-navbar: #9fbad4;
---text-navbar-color-default: #000;
---color-input: #9fbad4;
---button-border: #646464;
---color-button: #fff;
---button-hover: #7faedc;
-}
-
-@media (prefers-color-scheme: dark){
-
-:root{
-
-    --text-navbar-color-default: #FFF;
-    --color-navbar: #211f1f;
-    --color-input: #312e2e;
-    --button-border: #646464;
-    --color-button: #312e2e;
-    --button-hover: #646464;
-
-}
-}
-
-
-
 main{
 
-    color: white;
     margin-top: 10px;
     background-image: url('../assets/montrealbynight.jpg');
     background-size: 1520px; 
@@ -71,20 +44,12 @@ main{
     background-position: 30%;  
     position: relative;
     z-index: 1;
-    text-align: center;
-    
-
-}
-
-h1{
-
-    margin: 20PX;
+    color: var(--text-navbar-color-default);
 
 }
 
 main::before{
 
-    
     content: '';
     display: block;
     position: absolute;

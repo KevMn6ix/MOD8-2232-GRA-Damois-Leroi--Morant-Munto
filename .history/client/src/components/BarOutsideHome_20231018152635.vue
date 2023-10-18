@@ -83,12 +83,14 @@ color: var(--text-navbar-color-default);
 button {
     background-color: var(--color-button);
     color: var(--text-navbar-color-default);
+    color: #FFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: 2px solid var(--button-border);
+    margin-left: 3px;
 }
 
 button:hover {

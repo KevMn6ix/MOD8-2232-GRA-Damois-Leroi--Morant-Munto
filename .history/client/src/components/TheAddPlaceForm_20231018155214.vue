@@ -37,11 +37,11 @@ function displayUserInput() {
         
     </AddPlaceInput>
     
-    <label for="place-type" >
+    <label for="place-type" id="place-type">
         Select the type of place
     </label>
     <div id="form-nested-body">
-    <select name="place-type" v-model="UserInput.Type" id="place-type">
+    <select name="place-type" v-model="UserInput.Type">
         <option value="restaurant">Restaurant</option>
         <option value="activity">Activity</option>
         <option value="travel">Travel</option> 
@@ -103,11 +103,8 @@ label{
 #place-type{
 
     margin-bottom: 20px;
-    background-color: var(--color-button);
-    color: var(--text-navbar-color-default);
 
 }
-
 button {
     min-width: 50px;
     width: 15%;

@@ -83,20 +83,16 @@ color: var(--text-navbar-color-default);
 button {
     background-color: var(--color-button);
     color: var(--text-navbar-color-default);
+    color: #FFF;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border: 2px solid var(--button-border);
 }
 
 button:hover {
-    background-color: var(--button-hover);
-}
-
-button:visited {
-    color: white; /* Set the text color to yellow when the button is active (clicked) */
+    background-color: #7faedc;
 }
 
 img {

@@ -76,12 +76,6 @@ main{
 
 }
 
-h1{
-
-    margin: 20PX;
-
-}
-
 main::before{
 
     

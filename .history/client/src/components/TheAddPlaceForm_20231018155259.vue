@@ -103,8 +103,6 @@ label{
 #place-type{
 
     margin-bottom: 20px;
-    background-color: var(--color-button);
-    color: var(--text-navbar-color-default);
 
 }
 
