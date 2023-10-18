@@ -4,12 +4,10 @@ const cors = require('cors')
 const logger = require('morgan')
 var connection = require('./database')
 
-
 const app = express()
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(cors())
-
 
 module.exports = {
     addPlace (req, res) {
@@ -18,7 +16,7 @@ module.exports = {
         const address = req.body.address;
         const photoUrl = req.body.photoUrl;
         const type = req.body.type;
-
+        
         var sql = "INSERT INTO places (place_id, place_name, place_address, photo_url, place_type) VALUES (?,?,?,?,?)"
         connection.query(sql, [id, name, address, photoUrl, type],
             (err, result) => {

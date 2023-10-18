@@ -2,9 +2,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
-const {sequelize} = require('./models')
-//const config = require('./database/database')
-const mysql = require('mysql')
 var connection = require('./database/database')
 
 const app = express()
@@ -26,7 +23,6 @@ app.get('/', (req, res, next) => {
     res.send(results);
     //res.send('Hello ');
   });
-  
 })
 
 const port = 8081
