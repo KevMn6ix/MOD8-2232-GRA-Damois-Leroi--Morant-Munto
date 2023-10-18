@@ -58,8 +58,7 @@ CREATE TABLE `rating` (
   `HygieneRating` int,
   `AmbianceRating` int,
   `PriceRating` int,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`idPlace`) REFERENCES `places`(`place_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
