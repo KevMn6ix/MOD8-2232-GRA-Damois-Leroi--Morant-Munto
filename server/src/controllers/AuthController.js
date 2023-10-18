@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
 var connection = require('../database/database')
-const { type } = require('@testing-library/user-event/dist/type')
+
 
 
 const app = express()
