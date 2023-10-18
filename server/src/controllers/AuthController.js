@@ -4,7 +4,7 @@ const cors = require('cors')
 const logger = require('morgan')
 var connection = require('../database/database')
 const { type } = require('@testing-library/user-event/dist/type')
-
+var validator = require('../validator/validator')
 
 const app = express()
 app.use(logger('dev'))
@@ -21,7 +21,13 @@ module.exports = {
         const email = req.body.email;
         const phone_number = req.body.phone_number;
         const password = req.body.password;
-        //const confirmPassword = req.body.confirmPassword;
+        const confirmPassword = req.body.confirmPassword;
+
+        /*const error = validator.validateSignUp(last_name, first_name, email, phone_number, password, confirmPassword)
+        if(error){
+            console.log(error.message)
+            return new Error(error);
+        }*/
         let id = 0
         var sql = "INSERT INTO users (last_name, first_name, email, phone_number, password) VALUES (?,?,?,?,?)"
         connection.query(sql, [last_name, first_name, email, phone_number, password],
@@ -47,8 +53,10 @@ module.exports = {
                 }
   
             if(result.length > 0) {
+                console.log('connected !')
                 res.send({message : "connected"})
             } else {
+                console.log('Wrong username/password combination !')
                 res.send({message: "Wrong username/password combination !"})
             }
             }

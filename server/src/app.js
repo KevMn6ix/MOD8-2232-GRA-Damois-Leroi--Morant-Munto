@@ -2,6 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
+const dirname = require('path')
+const join = require('path')
+const fileURLToPath = require('url')
+
 var connection = require('./database/database')
 
 const app = express()
@@ -25,6 +29,15 @@ app.get('/', (req, res, next) => {
   });
 })
 
+/*
+// ADD the 4 lines over there
+const clientBuildPath = join(dirname(fileURLToPath(import.meta.url)), '../client/dist')
+app.use(express.static(clientBuildPath))
+
+// GET request handler for all other URLs that returns index.html of Vue single-page application
+const indexPath = join(clientBuildPath, 'index.html')
+app.get('*', (req, res) => res.sendFile(indexPath))
+*/
 const port = 8081
 //app.listen(process.env.PORT || 8081)
 
