@@ -65,22 +65,15 @@ main {
   align-items: center;
   padding: 4rem 0;
   gap: 2rem;
-  z-index: 1;
-  background-position: 30%;  
-    position: relative;
 }
 
 main::before{
 
-    background-color: rgba(2, 7, 16, 0.54);  
+    background-color: rgba(2, 7, 16, 0.84);  
     content: '';
     display: block;
     position: absolute;
     z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 
 }
 
@@ -98,8 +91,7 @@ h2 {
   flex-direction: column;
   padding: 2rem;
   gap: 2rem;
-  color: #FFF; /* Set text color for form inputs */
-  font-size: 20px;
+  color: #000; /* Set text color for form inputs */
 }
 
 .input-pair {

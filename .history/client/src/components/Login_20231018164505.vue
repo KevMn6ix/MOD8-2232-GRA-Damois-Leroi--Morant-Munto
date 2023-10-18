@@ -99,7 +99,6 @@ h2 {
   padding: 2rem;
   gap: 2rem;
   color: #FFF; /* Set text color for form inputs */
-  font-size: 20px;
 }
 
 .input-pair {

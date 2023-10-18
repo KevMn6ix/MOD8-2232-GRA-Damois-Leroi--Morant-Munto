@@ -98,8 +98,7 @@ h2 {
   flex-direction: column;
   padding: 2rem;
   gap: 2rem;
-  color: #FFF; /* Set text color for form inputs */
-  font-size: 20px;
+  color: #000; /* Set text color for form inputs */
 }
 
 .input-pair {
