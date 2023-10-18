@@ -2,9 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
-const dirname = require('path')
-const join = require('path')
-const fileURLToPath = require('url')
+
 
 var connection = require('./database/database')
 
@@ -14,6 +12,8 @@ app.use(bodyParser.json())
 app.use(cors())
 
 require('./routes')(app)
+
+//import routes from './routes.js/'
 
 // Get all the user
 app.get('/', (req, res, next) => {
@@ -28,6 +28,40 @@ app.get('/', (req, res, next) => {
     //res.send('Hello ');
   });
 })
+
+
+//get the list of place
+app.get('/places', (req, res) => {
+  const sql = 'SELECT * FROM places';
+  connection.query(sql , (err, results, next) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Erreur lors de la requête à la base de données');
+      return next(err);
+    }
+    res.send(results);
+    //res.send('Hello ');
+  });
+})
+
+
+
+
+//get the list of place
+app.get('/places', (req, res) => {
+  const sql = 'SELECT * FROM places';
+  connection.query(sql , (err, results, next) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Erreur lors de la requête à la base de données');
+      return next(err);
+    }
+    res.send(results);
+    //res.send('Hello ');
+  });
+})
+
+
 
 /*
 // ADD the 4 lines over there

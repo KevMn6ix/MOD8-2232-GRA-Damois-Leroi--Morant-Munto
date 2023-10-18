@@ -53,93 +53,142 @@ export default {
     <header>
         <BarOutsideHome />
     </header>
-    <div class="page-bg">
-        <h1>Visit the most beautiful places with MTL Student Spot !</h1>
+    <main>
+        <div class="page-bg">
+        <h1>Contribute to the sharing of the most beautiful places in Montréal with MTL Student Spot !</h1>
+        <h2>Join Now !</h2>
 
-        <form @submit.prevent="register">
-            <h2>Sign Up</h2>
-            <div class="input-pair">
-                <label for="">Last Name</label>
-                <input type="text" placeholder="Last Name" v-model="last_name" required minlength="2"/>
-            </div>
-            <div class="input-pair">
-                <label for="">First Name</label>
-                <input type="text" placeholder="First Name" v-model="first_name" required minlength="2"/>
-            </div>
-            <div class="input-pair">
-                <label for="">Email</label>
-                <input type="email" placeholder="Email Adress" v-model="email" required/>
-            </div>
+            <form @submit.prevent="register">
+                <h2>Sign Up</h2>
+                <div class="input-pair">
+                    <label for="">Last Name</label>
+                    <input type="text" placeholder="Last Name" v-model="last_name" required minlength="2"/>
+                </div>
+                <div class="input-pair">
+                    <label for="">First Name</label>
+                    <input type="text" placeholder="First Name" v-model="first_name" required minlength="2"/>
+                </div>
+                <div class="input-pair">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="Email Adress" v-model="email" required/>
+                </div>
 
             <div class="input-pair">
                 <label for="">Phone Number</label>
-                <input type="telephone" placeholder="Last Name" v-model="phone_number" required pattern="[0-9]{10}" minlength="2"/>
+                <input type="tel" placeholder="Last Name" v-model="phoneNumber"/>
             </div>
             <div class="input-pair">
                 <label for="">Password</label>
-                <input type="password" placeholder="Password" v-model="password" required>
+                <input type="password" placeholder="Password" v-model="password">
             </div>
             <div class="input-pair">
                 <label for="">Confirm Password</label>
-                <input type="password" placeholder="Confirm Password" v-model="passwordConfirm" required>
+                <input type="password" placeholder="Confirm Password" v-model="passwordConfirm">
             </div>
-            <div v-if="errorMessage">{{ errorMessage.value }}</div>
-            <button class="submit">Register</button>
-        </form>
-    </div>
+            <button class="submit" >Register</button>
+        </form> 
+        </div> 
+    </main>  
+    <footer>
+    <a href="#" aria-label="SoundCloud">
+        <i class="footer-icon">🎵</i>  <!-- Emoji used as placeholder for your icons -->
+    </a>
+    <a href="#" aria-label="Twitter">
+        <i class="footer-icon">🐦</i>  <!-- Emoji used as placeholder for your icons -->
+    </a>
+    <a href="#" aria-label="YouTube">
+        <i class="footer-icon">▶️</i>  <!-- Emoji used as placeholder for your icons -->
+    </a>
+    <a href="#" aria-label="Instagram">
+        <i class="footer-icon">📷</i>  <!-- Emoji used as placeholder for your icons -->
+    </a>
+    <a href="#" aria-label="Facebook">
+        <i class="footer-icon">📘</i>  <!-- Emoji used as placeholder for your icons -->
+    </a>
+  </footer>
 </template>
 
 <style scoped>
-* {
-    color: black;
 
-    @media (prefers-color-scheme: dark) {
-        color: white;
+:root{
 
-    }
+--color-navbar: #9fbad4;
+--text-navbar-color-default: #000;
+--color-input: #fff;
+--button-border: #646464;
+--color-button: #fff;
+--button-hover: #7faedc;
+}
+
+@media (prefers-color-scheme: dark){
+
+:root{
+
+    --text-navbar-color-default: #FFF;
+    --color-navbar: #211f1f;
+    --color-input: #312e2e;
+    --button-border: #646464;
+    --color-button: #312e2e;
+    --button-hover: #646464;
+
+}
+
 }
 
 header {
     padding-top: 1%;
     padding-bottom: 1%;
-
-    @media (prefers-color-scheme: dark) {
-        header {
-            background-color: #a2c4ec9d;
-        }
-    }
+    
+  @media (prefers-color-scheme: dark) {
+    header {
+  background-color: #a2c4ec9d;
+}
+  }
+  
 }
 
 
+main{
 
-.page-bg {
-    background-color: #A5BDD9;
+    background-image: url('../assets/party.jpg');
+    background-size: 1520px; 
+    background-repeat: repeat;  
+    background-position: 30%;  
+    position: relative;
+    z-index: 1;
+}
 
-    @media (prefers-color-scheme: dark) {
-        background-color: #93ABC775;
-    }
+main::before{
+
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(2, 7, 16, 0.7);  
+    z-index: -1; 
+
 }
 
 h1 {
     padding: 5rem;
     font-size: 2rem;
     text-align: center;
-    background-color: white;
-
-    @media (prefers-color-scheme: dark) {
-        background-color: black;
-    }
+    color: white;
 }
 
 h2 {
     display: flex;
     justify-content: center;
+    color: white;
 }
 
-form {
-
+form{
+    
     border: 2px solid black;
-    padding: 20px;
+    padding : 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,6 +198,24 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;*/
+}
+
+label{
+
+    color: white;
+    margin-top: 20px;
+
+}
+
+input {
+    flex-grow: 3;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--color-input);
+    color: var(--text-navbar-color-default);
+    border: 2px solid var(--button-border);
+    margin: 0 1rem;
 }
 
 .input-pair {
@@ -165,4 +232,5 @@ form {
     margin-right: auto;
     display: block;
 }
+
 </style>

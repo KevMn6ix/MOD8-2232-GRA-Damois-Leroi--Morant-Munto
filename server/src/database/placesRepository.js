@@ -27,6 +27,18 @@ module.exports = {
             message : `Thank you, ${req.body.name} have been successfully added !`
         })
     },
+    findPlaces (req, res) {
+        const sql = 'SELECT * FROM places';
+  connection.query(sql , (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Erreur lors de la requête à la base de données');
+      return next(err);
+    }
+    res.send(results);
+    //res.send('Hello ');
+  });
+    }
 }
 
 /* Place Example
