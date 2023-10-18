@@ -88,6 +88,31 @@ module.exports = {
             }
             res.send(result);
         })
+    },
+    searchPlace (req, res) {
+        const sql = "SELECT * FROM places WHERE place_name LIKE CONCAT('%',?,'%');";
+        //const sql = "SELECT * FROM places;";
+        const searchTerm = req.query.input;
+        console.log(searchTerm);
+        connection.query(sql, [searchTerm], (err, result) => {
+            if (err) {
+                console.log(err);
+            }
+            res.send(result);
+        }
+        )
+    },
+    displayType (req, res) {
+        const sql = "SELECT * FROM places WHERE place_type = ?;";
+        const category = req.params.type;
+        console.log(category);
+        connection.query(sql, [category], (err, result) => {
+            if (err) {
+                console.log(err);
+            }
+            res.send(result);
+        }
+        )
     }
 }
 
