@@ -9,4 +9,9 @@ module.exports = (app) => {
     app.get('/review/:id', functionRating.findRating)
     app.post('/review/:id', functionRating.addRating)
     app.get('/place/', placesRepository.findPlaces)
+    app.get('/place/:id', placesRepository.findPlace)
+    app.get('/place/:id/ambiance', placesRepository.findPlaceAmbianceRating)
+    app.get('/place/:id/price', placesRepository.findPlacePriceRating)
+    app.get('/place/:id/hygiene', placesRepository.findPlaceHygieneRating)
+    app.get('/place/:id/average', placesRepository.findPlaceAverageRating)
 }
