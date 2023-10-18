@@ -1,9 +1,8 @@
 <script>
-import { RouterLink } from 'vue-router';
 import BarOutsideHome from './BarOutsideHome.vue';
 import AuthentificationService from '@/services/AuthentificationService';
 
-export default{
+export default {
     name: 'RegisterForm',
     data() {
         return {
@@ -12,28 +11,32 @@ export default{
             email: '',
             phone_number: '',
             password: '',
-            passwordConfirm: ''
+            passwordConfirm: '',
+            errorMessage: ''
         };
     },
     methods: {
-        async register () {
-            const response = await AuthentificationService.register({
-                last_name: this.lastName,
-                first_name: this.firstName,
-                email: this.email,
-                phone_number: this.phoneNumber,
-                password: this.password,
-                passwordConfirm: this.passwordConfirm
-            })
-            console.log(response);
-        } ,
+        async register() {         
+           
+               const message = await AuthentificationService.register({
+                    last_name: this.last_name,
+                    first_name: this.first_name,
+                    email: this.email,
+                    phone_number: this.phone_number,
+                    password: this.password,
+                    passwordConfirm: this.passwordConfirm
+                })
+                console.log(message)
+    
+
+        },
 
         handleSubmit() {
             const userData = {
-                lastName: this.lastName,
-                firstName: this.firstName,
+                last_name: this.last_name,
+                first_name: this.first_name,
                 email: this.email,
-                phoneNumber: this.phoneNumber,
+                phone_number: this.phone_number,
                 password: this.password,
                 passwordConfirm: this.passwordConfirm
             };
@@ -41,34 +44,34 @@ export default{
             console.log("Registered");
         }
     },
-    components: { RouterLink, BarOutsideHome }
+    components: { BarOutsideHome }
 }
 
 </script>
 
 <template>
     <header>
-       <BarOutsideHome/>
+        <BarOutsideHome />
     </header>
     <main>
         <div class="page-bg">
         <h1>Contribute to the sharing of the most beautiful places in Montréal with MTL Student Spot !</h1>
         <h2>Join Now !</h2>
 
-        <form @submit.prevent="register" >
-            <h2>Sign Up</h2>
-            <div class="input-pair">
-                <label for="">Last Name</label>
-                <input type="text" placeholder="Last Name" v-model="lastName" />
-            </div>
-            <div class="input-pair">
-                <label for="">First Name</label>
-                <input type="text" placeholder="First Name" v-model="firstName"/>
-            </div>
-            <div class="input-pair">
-                <label for="">Email</label>
-                <input type="email" placeholder="Email Adress" v-model="email"/>
-            </div>
+            <form @submit.prevent="register">
+                <h2>Sign Up</h2>
+                <div class="input-pair">
+                    <label for="">Last Name</label>
+                    <input type="text" placeholder="Last Name" v-model="last_name" required minlength="2"/>
+                </div>
+                <div class="input-pair">
+                    <label for="">First Name</label>
+                    <input type="text" placeholder="First Name" v-model="first_name" required minlength="2"/>
+                </div>
+                <div class="input-pair">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="Email Adress" v-model="email" required/>
+                </div>
 
             <div class="input-pair">
                 <label for="">Phone Number</label>
@@ -169,14 +172,14 @@ main::before{
 
 }
 
-h1{
+h1 {
     padding: 5rem;
-    font-size: 2rem;    
+    font-size: 2rem;
     text-align: center;
     color: white;
 }
 
-h2{
+h2 {
     display: flex;
     justify-content: center;
     color: white;
@@ -184,7 +187,7 @@ h2{
 
 form{
     
-
+    border: 2px solid black;
     padding : 20px;
     display: flex;
     flex-direction: column;
@@ -215,7 +218,7 @@ input {
     margin: 0 1rem;
 }
 
-.input-pair{
+.input-pair {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -223,34 +226,11 @@ input {
     gap: 0.1rem;
 }
 
-.submit{
+.submit {
     margin-top: 1.2rem;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-
-footer {
-  z-index: 1000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    bottom: 0;
-    
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;  
-    padding: 10px 0;
-}
-
-.footer-icon {
-    font-size: 24px; 
-    color: white; 
-    transition: 0.3s; 
-}
-
-footer a:hover .footer-icon {
-    color: #A5BDD9;  
-}
 </style>

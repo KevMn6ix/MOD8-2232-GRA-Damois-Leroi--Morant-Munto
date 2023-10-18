@@ -1,12 +1,12 @@
 import Api from "./Api"
 
 export default {
-    register (creditentials) {
-        return Api().post('register', creditentials)
+    async register (creditentials) {
+        return await Api().post('register', creditentials)
     },
 
-    login(creditentials) {
-        return Api().post('login', creditentials)
+    async login(creditentials) {
+        return await Api().post('login', creditentials)
     }
 }
 

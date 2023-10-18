@@ -1,5 +1,17 @@
 /* User Validators */
 
+module.exports = {
+  validateSignUp(last_name, first_name, email, phone_number, password, confirmPassword ){
+
+  return validateLastName(last_name) ?? 
+        validateFirstName(first_name) ??
+        validateEmail(email)  ??
+        validatePhoneNumber(phone_number) ??
+        validatePassword(password, confirmPassword)
+}
+}
+
+
 function validateLastName(last_name) {
   if (last_name === undefined) {
     return new Error('Last name is missing.')
@@ -7,6 +19,10 @@ function validateLastName(last_name) {
 
   if (typeof last_name !== 'string') {
     return new Error('Last name must be a string.')
+  }
+
+  if(last_name.length < 2){
+    return new Error('Last name must contain at least 2 characters')
   }
 
   last_name = last_name.trim()
@@ -25,6 +41,10 @@ function validateFirstName(first_name) {
       return new Error('First name must be a string.')
     }
   
+    if(first_name.length < 2){
+      return new Error('First name must contain at least 2 characters')
+    }
+
     first_name = first_name.trim()
     if (first_name === '') {
       return new Error('First name must not be empty.')
@@ -41,6 +61,10 @@ function validateEmail(email) {
       return new Error('Email must be a string.')
     }
 
+    if(email.length < 4){
+      return new Error('Email must contain at least 4 characters')
+    }
+
     if(!containOnlyAt(email)){
         return new Error('Email must contain an @.')
     }
@@ -52,31 +76,38 @@ function validateEmail(email) {
     return null
 }
 
-function validatePhoneNumber(year) {
-    if (year === undefined) {
-      return new Error('Year is missing.')
+function validatePhoneNumber(phone_number) {
+    if (phone_number === undefined) {
+      return new Error('Phone Number is missing.')
     }
-  
-    if (!Number.isInteger(year)) {
-      return new Error('Year must be an integer.')
+
+    if(phone_number.length < 8){
+      return new Error('Your phone number must contain at least 8 characters')
     }
-  
-    if (year < 1895) {
-      return new Error('Year must not be less than 1895.')
-    }
-  
     return null
+}
+
+function validatePassword(password, confirmPassword) {
+  if(password.length < 8){
+    return new Error('Your password must contain at least 8 characters')
   }
+
+  if(password.localeCompare(confirmPassword) !== 0){
+    return new Error('Your confirm password is different than the first !')
+  }
+
+}
 
 // Check if the email contains an '@'
 function containOnlyAt(st) {
-    let count = 0;
-    for (let i = 0; i < st.length; i++) {
-        if (st[i] === '@') {
-            count++;
-        }
+  let count = 0;
+  for (let i = 0; i < st.length; i++) {
+    if (st[i] === '@') {
+      count++;
     }
-    return count === 1;
+  }
+  return count === 1;
 }
 
 /* Place Validators*/
+
