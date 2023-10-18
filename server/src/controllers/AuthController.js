@@ -3,13 +3,13 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
 var connection = require('../database/database')
+const { type } = require('@testing-library/user-event/dist/type')
 
 
 const app = express()
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(cors())
-
 
 module.exports = {
 
@@ -22,15 +22,15 @@ module.exports = {
         const phone_number = req.body.phone_number;
         const password = req.body.password;
         //const confirmPassword = req.body.confirmPassword;
-      
-        var sql = "INSERT INTO users (user_id, last_name, first_name, email, phone_number, password) VALUES (?,?,?,?,?,?)"
-        connection.query(sql, [user_id, last_name, first_name, email, phone_number, password],
+        let id = 0
+        var sql = "INSERT INTO users (last_name, first_name, email, phone_number, password) VALUES (?,?,?,?,?)"
+        connection.query(sql, [last_name, first_name, email, phone_number, password],
           (err, result) => {
             console.log(err);
           }
         )
         res.send({
-            message: `Hello ${req.body.email}! your user was registeres! Have fun!`
+            message: `Hello ${last_name}! your user was registeres! Have fun!`
         })
     },
 

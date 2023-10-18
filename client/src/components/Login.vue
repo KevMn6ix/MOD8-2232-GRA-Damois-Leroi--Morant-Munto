@@ -1,5 +1,6 @@
 <script>
-import BarOutsideHome from './BarOutsideHome.vue';
+import AuthentificationService from '@/services/AuthentificationService';
+
 export default {
     name: 'LoginForm',
     data() {
@@ -8,7 +9,16 @@ export default {
             password: '',
         };
     },
-    components: { BarOutsideHome }
+    methods : {
+        async login () {
+            const response = await AuthentificationService.login({
+                email: this.email,
+                password: this.password
+            }) 
+            console.log(response)
+        }
+    }
+
 }
 
 </script>
@@ -22,7 +32,7 @@ export default {
         <h2>Login</h2>
     </div>
 
-    <div class="form-container">
+    <form class="form-container" @submit.prevent="login" >
         <div class="input-pair">
             <label for="">Email</label>
             <input type="text" placeholder="Enter mail">
@@ -32,12 +42,13 @@ export default {
             <label for="">Password</label>
             <input type="text" placeholder="Enter Password">
         </div>
-        
-    </div>
 
-    <div class="button-container">
-        <button>Login</button>
-    </div>
+        <div class="button-container">
+            <button class="submit">Login</button>
+        </div>
+    </form>
+
+    
 </template>
 
 <style scoped >
@@ -77,7 +88,7 @@ h2{
 
 .button-container {
     background-color: #9EB3CB;
-    padding: 3rem;
+    padding: 4rem ;
     display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,5 @@
 <script>
 import { RouterLink } from 'vue-router';
-import NavBar from './NavBar.vue';
 import BarOutsideHome from './BarOutsideHome.vue';
 import AuthentificationService from '@/services/AuthentificationService';
 
@@ -8,10 +7,10 @@ export default{
     name: 'RegisterForm',
     data() {
         return {
-            lastName: '',
-            firstName: '',
+            last_name: '',
+            first_name: '',
             email: '',
-            phoneNumber: '',
+            phone_number: '',
             password: '',
             passwordConfirm: ''
         };
@@ -19,10 +18,10 @@ export default{
     methods: {
         async register () {
             const response = await AuthentificationService.register({
-                lastName: this.lastName,
-                firstName: this.firstName,
+                last_name: this.lastName,
+                first_name: this.firstName,
                 email: this.email,
-                phoneNumber: this.phoneNumber,
+                phone_number: this.phoneNumber,
                 password: this.password,
                 passwordConfirm: this.passwordConfirm
             })
