@@ -86,62 +86,20 @@ export default{
         </form> 
         </div> 
     </main>  
-    <footer>
-    <a href="#" aria-label="SoundCloud">
-        <i class="footer-icon">🎵</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Twitter">
-        <i class="footer-icon">🐦</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="YouTube">
-        <i class="footer-icon">▶️</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Instagram">
-        <i class="footer-icon">📷</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Facebook">
-        <i class="footer-icon">📘</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-  </footer>
 </template>
 
 <style scoped>
 
-:root{
 
---color-navbar: #9fbad4;
---text-navbar-color-default: #000;
---color-input: #fff;
---button-border: #646464;
---color-button: #fff;
---button-hover: #7faedc;
-}
-
-@media (prefers-color-scheme: dark){
-
-:root{
-
-    --text-navbar-color-default: #FFF;
-    --color-navbar: #211f1f;
-    --color-input: #312e2e;
-    --button-border: #646464;
-    --color-button: #312e2e;
-    --button-hover: #646464;
-
-}
-
-}
 
 header {
     padding-top: 1%;
     padding-bottom: 1%;
-    
   @media (prefers-color-scheme: dark) {
     header {
   background-color: #a2c4ec9d;
 }
   }
-  
 }
 
 
@@ -164,27 +122,19 @@ main::before{
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(2, 7, 16, 0.7);  
+    background-color: rgba(2, 7, 16, 0.84);  
     z-index: -1; 
 
-}
-
-h1{
-    padding: 5rem;
-    font-size: 2rem;    
-    text-align: center;
-    color: white;
 }
 
 h2{
     display: flex;
     justify-content: center;
-    color: white;
 }
 
 form{
     
-
+    border: 2px solid black;
     padding : 20px;
     display: flex;
     flex-direction: column;
@@ -195,24 +145,6 @@ form{
     display: flex;
     flex-direction: column;
     gap: 1rem;*/
-}
-
-label{
-
-    color: white;
-    margin-top: 20px;
-
-}
-
-input {
-    flex-grow: 3;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.25rem;
-    background-color: var(--color-input);
-    color: var(--text-navbar-color-default);
-    border: 2px solid var(--button-border);
-    margin: 0 1rem;
 }
 
 .input-pair{
@@ -230,27 +162,4 @@ input {
     display: block;
 }
 
-
-footer {
-  z-index: 1000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    bottom: 0;
-    
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;  
-    padding: 10px 0;
-}
-
-.footer-icon {
-    font-size: 24px; 
-    color: white; 
-    transition: 0.3s; 
-}
-
-footer a:hover .footer-icon {
-    color: #A5BDD9;  
-}
 </style>

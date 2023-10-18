@@ -57,13 +57,20 @@ function sendUserInput() {
 :root{
 
     --text-navbar-color-default: #FFF;
-    --color-navbar: #8686d8;
+    --color-navbar: #211f1f;
     --color-input: #312e2e;
     --button-border: #646464;
     --color-button: #312e2e;
     --button-hover: #646464;
 
 }
+
+}
+
+header{
+
+    background-color: blue;
+    z-index: 1000;  
 
 }
 

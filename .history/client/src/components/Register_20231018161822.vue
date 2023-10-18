@@ -86,23 +86,6 @@ export default{
         </form> 
         </div> 
     </main>  
-    <footer>
-    <a href="#" aria-label="SoundCloud">
-        <i class="footer-icon">🎵</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Twitter">
-        <i class="footer-icon">🐦</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="YouTube">
-        <i class="footer-icon">▶️</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Instagram">
-        <i class="footer-icon">📷</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Facebook">
-        <i class="footer-icon">📘</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-  </footer>
 </template>
 
 <style scoped>
@@ -164,7 +147,7 @@ main::before{
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(2, 7, 16, 0.7);  
+    background-color: rgba(2, 7, 16, 0.4);  
     z-index: -1; 
 
 }
@@ -173,13 +156,11 @@ h1{
     padding: 5rem;
     font-size: 2rem;    
     text-align: center;
-    color: white;
 }
 
 h2{
     display: flex;
     justify-content: center;
-    color: white;
 }
 
 form{
@@ -195,13 +176,6 @@ form{
     display: flex;
     flex-direction: column;
     gap: 1rem;*/
-}
-
-label{
-
-    color: white;
-    margin-top: 20px;
-
 }
 
 input {
@@ -230,27 +204,4 @@ input {
     display: block;
 }
 
-
-footer {
-  z-index: 1000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    bottom: 0;
-    
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;  
-    padding: 10px 0;
-}
-
-.footer-icon {
-    font-size: 24px; 
-    color: white; 
-    transition: 0.3s; 
-}
-
-footer a:hover .footer-icon {
-    color: #A5BDD9;  
-}
 </style>

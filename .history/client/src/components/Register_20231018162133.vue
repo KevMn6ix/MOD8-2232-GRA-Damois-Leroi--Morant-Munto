@@ -86,23 +86,6 @@ export default{
         </form> 
         </div> 
     </main>  
-    <footer>
-    <a href="#" aria-label="SoundCloud">
-        <i class="footer-icon">🎵</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Twitter">
-        <i class="footer-icon">🐦</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="YouTube">
-        <i class="footer-icon">▶️</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Instagram">
-        <i class="footer-icon">📷</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-    <a href="#" aria-label="Facebook">
-        <i class="footer-icon">📘</i>  <!-- Emoji used as placeholder for your icons -->
-    </a>
-  </footer>
 </template>
 
 <style scoped>
@@ -200,7 +183,7 @@ form{
 label{
 
     color: white;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 
@@ -230,27 +213,4 @@ input {
     display: block;
 }
 
-
-footer {
-  z-index: 1000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    bottom: 0;
-    
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;  
-    padding: 10px 0;
-}
-
-.footer-icon {
-    font-size: 24px; 
-    color: white; 
-    transition: 0.3s; 
-}
-
-footer a:hover .footer-icon {
-    color: #A5BDD9;  
-}
 </style>

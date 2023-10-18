@@ -230,27 +230,4 @@ input {
     display: block;
 }
 
-
-footer {
-  z-index: 1000;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    bottom: 0;
-    
-    left: 0;
-    width: 100%;
-    background-color: #1a1a1a;  
-    padding: 10px 0;
-}
-
-.footer-icon {
-    font-size: 24px; 
-    color: white; 
-    transition: 0.3s; 
-}
-
-footer a:hover .footer-icon {
-    color: #A5BDD9;  
-}
 </style>

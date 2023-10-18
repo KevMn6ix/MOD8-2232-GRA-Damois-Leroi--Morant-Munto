@@ -12,7 +12,6 @@ function sendUserInput() {
 </script>
 /** This component is the bar at the top of the screen */
 <template>
-    <header>
     <nav id="head-bar">
         <img src="../assets/logoMTL.png">
         <RouterLink to="/">
@@ -33,11 +32,9 @@ function sendUserInput() {
         </button>
     </router-link>
     </div>
-    
     <div id="sub-header">
 <TheSubHeader/></div>
 </nav>
-</header>
 
 </template>
 <style scoped>
@@ -57,7 +54,7 @@ function sendUserInput() {
 :root{
 
     --text-navbar-color-default: #FFF;
-    --color-navbar: #8686d8;
+    --color-navbar: #211f1f;
     --color-input: #312e2e;
     --button-border: #646464;
     --color-button: #312e2e;
