@@ -21,7 +21,7 @@ module.exports = {
                 if (err) {
                     console.log(err);
                 }
-                res.send(result);
+                res.json(result);
             }
             
         )

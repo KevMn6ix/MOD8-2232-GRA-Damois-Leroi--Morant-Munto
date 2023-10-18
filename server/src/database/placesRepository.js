@@ -34,7 +34,7 @@ module.exports = {
       res.status(500).send('Erreur lors de la requête à la base de données');
       return next(err);
     }
-    res.send(results);
+    res.json(results);
     //res.send('Hello ');
   });
     },
@@ -45,48 +45,58 @@ module.exports = {
             if (err) {
                 console.log(err);
             }
-            res.send(result);
+            res.json(result);
         }
         )
     },
     findPlaceHygieneRating(req, res) {
-        const sql = "SELECT avg(HygieneRating) FROM rating where idPlace = ?;"
+        const sql = "SELECT avg(HygieneRating) AS hygieneRating FROM rating where idPlace = ?;"
         const id = req.params.id;
         connection.query(sql, [id], (err, result) => {
             if (err) {
                 console.log(err);
             }
-            res.send(result);
+            res.json(result);
         })
     },
     findPlaceAmbianceRating(req, res) {
-        const sql = "SELECT avg(AmbianceRating) FROM rating where idPlace = ?;"
+        const sql = "SELECT avg(AmbianceRating) AS ambianceRating FROM rating where idPlace = ?;"
         const id = req.params.id;
         connection.query(sql, [id], (err, result) => {
             if (err) {
                 console.log(err);
             }
-            res.send(result);
+            res.json(result);
         })
     },
     findPlacePriceRating(req, res) {
-        const sql = "SELECT avg(PriceRating) FROM rating where idPlace = ?;"
+        const sql = "SELECT avg(PriceRating) AS priceRating FROM rating where idPlace = ?;"
         const id = req.params.id;
         connection.query(sql, [id], (err, result) => {
             if (err) {
                 console.log(err);
             }
-            res.send(result);
+            res.json(result);
         })
     },
     findPlaceAverageRating(req, res) {
-        const sql = "SELECT (avg(PriceRating) + avg(HygieneRating) + avg(AmbianceRating))/3 FROM rating where idPlace = ?;"
+        const sql = "SELECT (avg(PriceRating) + avg(HygieneRating) + avg(AmbianceRating))/3 AS rating FROM rating where idPlace = ?;"
         const id = req.params.id;
         connection.query(sql, [id], (err, result) => {
             if (err) {
                 console.log(err);
             }
-            res.send(result);
+            res.json(result);
+        })
+    },
+    findPlaceAllRating(req, res) {
+        const sql = "SELECT (avg(PriceRating) + avg(HygieneRating) + avg(AmbianceRating))/3 AS rating, avg(PriceRating) AS priceRating, avg(HygieneRating) AS hygieneRating, avg(AmbianceRating) AS ambianceRating  FROM rating where idPlace = ?;"
+        const id = req.params.id;
+        connection.query(sql, [id], (err, result) => {
+            if (err) {
+                console.log(err);
+            }
+            res.json(result);
         })
     },
     searchPlace (req, res) {
@@ -98,7 +108,7 @@ module.exports = {
             if (err) {
                 console.log(err);
             }
-            res.send(result);
+            res.json(result);
         }
         )
     },
@@ -110,7 +120,7 @@ module.exports = {
             if (err) {
                 console.log(err);
             }
-            res.send(result);
+            res.json(result);
         }
         )
     }

@@ -15,5 +15,6 @@ module.exports = (app) => {
     app.get('/place/:id/price', placesRepository.findPlacePriceRating)
     app.get('/place/:id/hygiene', placesRepository.findPlaceHygieneRating)
     app.get('/place/:id/average', placesRepository.findPlaceAverageRating)
+    app.get('/place/:id/all', placesRepository.findPlaceAllRating)
     app.get('/type/:type',placesRepository.displayType)
 }
