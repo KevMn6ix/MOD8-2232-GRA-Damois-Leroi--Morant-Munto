@@ -14,6 +14,8 @@ app.use(cors())
 
 require('./routes')(app)
 
+//import routes from './routes.js/'
+
 // Get all the user
 app.get('/', (req, res, next) => {
   var sql = "SELECT * FROM users "
@@ -43,6 +45,8 @@ app.get('/places', (req, res) => {
     //res.send('Hello ');
   });
 })
+
+
 
 const port = 8081
 //app.listen(process.env.PORT || 8081)
