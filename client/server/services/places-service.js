@@ -27,8 +27,9 @@ function returnPlaces() {
 }
 
 
+
 async function findPlaces() {
-    return axios.get("http://localhost:8081/place").then(responce => {
+    return axios.get("http://localhost:8081/places").then(responce => {
         console.log(responce.data[0])
         const tempo = responce.data
         return tempo
