@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import AddPlaceInput from './AddPlaceInput.vue';
+import axios from 'axios';
 const emit = defineEmits(['user-input'])
 const UserInput = ref({
     Type: '', 
@@ -10,6 +11,13 @@ const UserInput = ref({
 })
 function sendUserInput() {
     console.log(UserInput.value)
+    console.log("version with axios")
+    console.log({name: UserInput.value.Title, address: UserInput.value.address, photoUrl: UserInput.value.Picture, type: UserInput.value.Type})
+    axios.post("http://localhost:8081/place/add", {name: UserInput.value.Title, address: UserInput.value.Address, photoUrl: UserInput.value.Picture, type: UserInput.value.Type}).then(responce => {
+        console.log(responce)
+    }). catch(error => {
+        console.log(error)
+    })
     emit('user-input', UserInput.value)
 }
 function displayUserInput() {

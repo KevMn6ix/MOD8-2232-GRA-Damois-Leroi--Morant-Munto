@@ -1,13 +1,20 @@
 <script setup>
   import PlaceList from '../components/PlaceList.vue';
   import PlaceTypeList from '../components/PlaceTypeList.vue';
-  import { ref } from 'vue';
+  import { onMounted, ref } from 'vue';
   import { useRoute } from 'vue-router';
   import BarOutsideHome from '../components/BarOutsideHome.vue'
   import UsePlaceService from '../../server/services/places-service';
   const id = ref(0);
-  const placeList = UsePlaceService().findPlaces();
-
+  const placeService = UsePlaceService()
+  //const placeList = UsePlaceService().findPlaces();
+  const placeList = ref([])
+onMounted(
+    async () => {
+      placeList.value = await placeService.findPlaces();
+        console.log(placeList.value)
+    }
+)
   const pageTitle = 'Places Page';
   let loadedPlaces = [];
 

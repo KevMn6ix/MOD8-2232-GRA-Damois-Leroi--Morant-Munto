@@ -4,6 +4,7 @@
     import { computed } from 'vue'
     import { useRoute } from 'vue-router';
     import UsePlaceService from '../../server/services/places-service';
+    const placeService = UsePlaceService()
     const { type, placeArray } = defineProps({
         type: String,
         placeArray: Object
@@ -15,19 +16,16 @@
     const route = useRoute();   
     const type_local = route.params.types;
 
-    const searchresults = UsePlaceService().findPlaces().filter((place) => {
+    const searchresults = placeArray.filter((place) => {
         console.log(place);
         console.log(place.Type);
         console.log(place.Type === type_local);
         console.log(type_local);
         return place.Type === type_local;
     });
-
-  
 </script>
 
 <template>
-
 
     <ul>
         <li v-for="place in searchresults">
