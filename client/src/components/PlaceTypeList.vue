@@ -18,11 +18,11 @@ type_local.value = route.params.types;
 const getTypeForPage = computed(() => {
     switch (type_local.value) {
         case 'restaurant':
-            return 'Restaurant';
+            return 'restaurant';
         case 'activity':
-            return 'Activity';
+            return 'activity';
         case 'travel':
-            return 'Travel';
+            return 'travel';
         default:
             return ''; // Gérer les cas où le type ne correspond à aucun de ceux attendus
     }
@@ -39,22 +39,22 @@ async function fetchPlaces() {
     const response = await AuthentificationService.findPlaces();
     places.value = response.data
 }
-
+console.log(places)
 </script>
 
 <template>
     <ul>
         <li v-for="place in places">
-            <p v-if="place.place_type === getTypeForPage">
-                <PlaceItem :rating="place.Rating" :id="place.place_id">
+            <p v-if="place.Type === getTypeForPage">
+                <PlaceItem :rating="place.Rating" :id="place.Id">
                     <template #picture>
-                        <img :src="place.photo_url" alt="place's picture">
+                        <img :src="place.Picture" alt="place's picture">
                     </template>
                     <template #title>
-                        {{ place.place_name }}
+                        {{ place.Title }}
                     </template>
                     <template #address>
-                        {{ place.place_address }}
+                        {{ place.Address }}
                     </template>
                 </PlaceItem>
             </p>
