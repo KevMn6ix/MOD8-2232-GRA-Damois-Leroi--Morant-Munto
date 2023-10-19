@@ -104,7 +104,10 @@ id-address {
     margin-right: 0;
 }
 #window {
-    border: solid white;
+    border: solid black;
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
     display: flex;
     justify-content: center;
     padding: 0;

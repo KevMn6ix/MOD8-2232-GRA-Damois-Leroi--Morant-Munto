@@ -104,7 +104,7 @@ id-address {
     margin-right: 0;
 }
 #window {
-    border: solid white;
+    border: solid black;
     display: flex;
     justify-content: center;
     padding: 0;
