@@ -28,7 +28,7 @@ export default {
 <style>
 
 span {
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .fas .fa-star {

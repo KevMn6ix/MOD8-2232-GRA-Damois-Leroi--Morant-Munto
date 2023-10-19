@@ -9,7 +9,7 @@ function RestaurantPressed() {
     document.getElementById('travel').setAttribute("class", "unpressed");
     document.getElementById('activity').setAttribute("class", "unpressed");
 }
-function TravelPressed() {
+function TravelPressed() { 
     /**function to selecct the option to only have the travel  */
     emit('user-input', 'travel');
     document.getElementById('travel').setAttribute("class", "pressed");

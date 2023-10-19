@@ -56,6 +56,6 @@ const router = createRouter({
       component: () => import('../views/AddPageView.vue')
     }
   ]
-})
+}) 
 
 export default router

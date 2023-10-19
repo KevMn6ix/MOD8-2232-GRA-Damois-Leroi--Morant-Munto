@@ -14,7 +14,7 @@ console.log(servicePlace.findRatingsAbout(propEntered.idOfPlace))
     <h2>
         Rating
     </h2>
-    <ul>
+    <ul> 
         <li v-for="rate of servicePlace.findRatingsAbout(propEntered.idOfPlace)">
             <RatingItem>
                 <template #place-name>

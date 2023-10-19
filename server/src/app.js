@@ -29,7 +29,6 @@ app.get('/', (req, res, next) => {
   });
 })
 
-
 //get the list of place
 /*
 app.get('/places', (req, res) => {

@@ -7,4 +7,4 @@ import Register from '../components/Register.vue'
 </template>
 
 <style>
-</style>
+</style> 

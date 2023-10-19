@@ -90,7 +90,7 @@ template {
     gap: 100px;
     @media (max-width: 400) {
         gap: 0;
-        justify-content: center;
+        justify-content: center; 
     }
 }
 id-address {

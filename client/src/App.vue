@@ -11,7 +11,7 @@ import HelloWorld from './components/HelloWorld.vue'
 <style scoped>
 template {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
 }
 
 header {

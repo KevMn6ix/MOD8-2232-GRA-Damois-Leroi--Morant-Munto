@@ -26,7 +26,7 @@ function displayUserInput() {
 </script>
 <template>
     <div id="form-body">
-    <label>
+    <label> 
         Place's name
     </label>
     <AddPlaceInput type="text" @user-input="(termInputed) => {UserInput.Title = termInputed}">

@@ -15,7 +15,7 @@ export default {
             errorMessage: ''
         };
     },
-    methods: {
+    methods: { 
         async register() {         
            
                const message = await AuthentificationService.register({

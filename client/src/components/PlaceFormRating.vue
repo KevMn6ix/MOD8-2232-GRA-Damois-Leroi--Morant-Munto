@@ -22,7 +22,7 @@ export default {
         getData(data){
             this.result = data;
             console.log(this.result);
-        },
+        }, 
 
         setPriceRating(data){
             this.placeRate.priceRating = data;

@@ -12,4 +12,4 @@ import BarOutsideHome from '../components/BarOutsideHome.vue';
 
 <style>
 
-</style>
+</style> 
