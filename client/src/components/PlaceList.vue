@@ -1,19 +1,32 @@
 <script setup>
 import PlaceItem from './PlaceItem.vue';
 import UsePlaceService from '../../server/services/places-service';
+import { onMounted, ref } from 'vue';
 const propsList = defineProps({
     searchTerms: String,
     placeArray: Object
 })
 const placeService = UsePlaceService()
+console.log("essai avec axios")
+//placeService.returnPlaces()
+//console.log(placeService.findPlaces())
+const essaiedessperer = ref([])
+onMounted(
+    async () => {
+        essaiedessperer.value = await placeService.findPlaces();
+        console.log(essaiedessperer.value)
+    }
+)
+
 </script>
 /** this is a component to display every place */
 <template>
     <h1>
-        Search For ...
+        Search For ... 
     </h1>
     <ul>
-        <li v-for="place in placeService.findPlaces().filter((p) => { 
+        <li v-for="place in essaiedessperer.filter((p) => { 
+            console.log(p)
             return ((p.Title.substring(0, propsList.searchTerms.length)).toLowerCase() === propsList.searchTerms.toLowerCase())})">
             <PlaceItem :id="place.Id" :rating="place.Rating" :type="place.Type">
                 <template #picture>

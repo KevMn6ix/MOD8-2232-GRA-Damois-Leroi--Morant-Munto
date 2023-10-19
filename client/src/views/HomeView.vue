@@ -128,12 +128,20 @@ main {
 
 #home-body {
     
-    background-image: url('../assets/montrealbynight.jpg');
+    /*background-image: url('../assets/montrealbynight.jpg');*/
+    background-color: white;
     background-size: 1520px; 
     background-repeat: repeat;  
     background-position: 30%;  
     position: relative;
     z-index: 1;
+}
+
+#research {
+    background-color: white;
+    @media (prefers-color-scheme:dark) {
+        background-color: black;
+    }
 }
 
 #home-body::before {

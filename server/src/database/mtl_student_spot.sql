@@ -46,9 +46,9 @@ CREATE TABLE `places` (
 
 -- Dumping data for table mtl_student_spot_database.places: ~0 rows (approximately)
 
-INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `place_address`, `photo_url`, `place_type`) VALUES ('1', 'Tim Hortons ', 'Rue St Cath', 'urlTimmy', 'Restaurant');
-INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `place_address`, `photo_url`, `place_type`) VALUES ('2', 'Casino', '1 Place du Casino', 'urlCasino', 'Activity');
-INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `place_address`, `photo_url`, `place_type`) VALUES ('3', 'Mont Royal', 'Colline du Mont Royal', 'urlMroyal', 'Travel');
+INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `place_address`, `photo_url`, `place_type`) VALUES ('1', 'Tim Hortons ', 'Rue St Cath', 'urlTimmy', 'restaurant');
+INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `place_address`, `photo_url`, `place_type`) VALUES ('2', 'Casino', '1 Place du Casino', 'urlCasino', 'activity');
+INSERT INTO `mtl_student_spot_database`.`places` (`place_id`, `place_name`, `place_address`, `photo_url`, `place_type`) VALUES ('3', 'Mont Royal', 'Colline du Mont Royal', 'urlMroyal', 'travel');
 
 
 CREATE TABLE `rating` (

@@ -27,7 +27,7 @@ module.exports = {
         })
     },
     findPlaces (req, res) {
-        const sql = 'SELECT * FROM places';
+        const sql = 'SELECT place_id AS Id, place_name AS Title, place_address AS Address, photo_url AS Picture, place_type AS Type FROM places';
   connection.query(sql , (err, results) => {
     if (err) {
       console.error(err);
@@ -39,7 +39,7 @@ module.exports = {
   });
     },
     findPlace (req, res) {
-        const sql = 'SELECT * FROM places WHERE place_id = ?;'
+        const sql = 'SELECT place_id AS Id, place_name AS Title, place_address AS Address, photo_url AS Picture, place_type AS Type FROM places WHERE place_id = ?;'
         const id = req.params.id;
         connection.query(sql, [id], (err, result) => {
             if (err) {
@@ -113,7 +113,7 @@ module.exports = {
         )
     },
     displayType (req, res) {
-        const sql = "SELECT * FROM places WHERE place_type = ?;";
+        const sql = "SELECT place_id AS Id, place_name AS Title, place_address AS Address, photo_url AS Picture, place_type AS Type FROM places WHERE place_type = ?;";
         const category = req.params.type;
         console.log(category);
         connection.query(sql, [category], (err, result) => {
