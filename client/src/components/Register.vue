@@ -27,8 +27,6 @@ export default {
                     passwordConfirm: this.passwordConfirm
                 })
                 console.log(message)
-    
-
         },
 
         handleSubmit() {

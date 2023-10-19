@@ -1,36 +1,49 @@
 <script setup>
 
-    import { ref, computed } from 'vue'
-    import { useRoute } from 'vue-router'
-    import UsePlaceService from '../../server/services/places-service';
-    import TheRatingList from '../components/TheRatingList.vue';
-    import BarOutsideHome from  '../components/BarOutsideHome.vue'
-    const placeService = UsePlaceService();
-    const placeList = placeService.findPlaces();
-    //console.log(placeList)
-    const route = useRoute()
-    const id_place = Number(route.params.id)
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import UsePlaceService from '../../server/services/places-service';
+import TheRatingList from '../components/TheRatingList.vue';
+import BarOutsideHome from '../components/BarOutsideHome.vue'
+const placeService = UsePlaceService();
+const placeList = placeService.findPlaces();
+import AuthentificationService from '@/services/AuthentificationService';
 
-    const place = computed(() => {
-        return placeList.find((p) => p.Id === id_place);
-    });
+//console.log(placeList)
+const route = useRoute()
+const id_place = Number(route.params.id)
 
-    const calculateTotalRating = (place) => {
+const places = ref();
+onMounted(() => {
+    fetchPlaces();
+});
 
-        if (place) {
-            const { HygieneRating, AmbianceRating, PriceRating } = place;
-            const totalRating = (HygieneRating + AmbianceRating + PriceRating) / 3;
+async function fetchPlaces() {
+    const response = await AuthentificationService.findPlaces();
+    places.value = response.data
+}
 
-            return totalRating.toFixed(1);
-        }
-        return 0; 
-    };
+
+const place = computed(() => {
+    return placeList.find((p) => p.Id === id_place);
+});
+
+const calculateTotalRating = (place) => {
+
+    if (place) {
+        const { HygieneRating, AmbianceRating, PriceRating } = place;
+        const totalRating = (HygieneRating + AmbianceRating + PriceRating) / 3;
+
+        return totalRating.toFixed(1);
+    }
+    return 0;
+};
 
 </script>
 
 <template>
     <header>
-        <BarOutsideHome/>
+        <BarOutsideHome />
     </header>
     <div>
         <h1>{{ place.Title }}</h1>
@@ -54,13 +67,13 @@
         <div>
             <router-link :to="'/places/review/' + place.Id" name='placereview'> review</router-link>
         </div>
-        <TheRatingList :idOfPlace="place.Id"/>
+        <TheRatingList :idOfPlace="place.Id" />
     </div>
 </template>
 
 <style scoped>
 :root {
-  --light-color-background-restaurant: #A5BDD9;
+    --light-color-background-restaurant: #A5BDD9;
     --light-color-background-travel: #a2c4ec;
     --light-color-background-activity: #9EB3CB;
     --dark-color-background-restaurant: #a2c4ec9d;
@@ -69,12 +82,14 @@
     --color-background-restaurant: var(--light-color-background-restaurant);
     --color-background-travel: var(--light-color-background-travel);
     --color-background-activity: var(--light-color-background-activity);
+
     @media (prefers-color-scheme: dark) {
-      --color-background-restaurant: var(--dark-color-background-restaurant);
+        --color-background-restaurant: var(--dark-color-background-restaurant);
         --color-background-travel: var(--dark-color-background-travel);
-        --color-background-activity: var(--dark-color-background-activity); 
+        --color-background-activity: var(--dark-color-background-activity);
     }
 }
+
 img {
     min-width: 75px;
     min-height: 75px;
@@ -83,12 +98,15 @@ img {
     max-width: 200px;
     max-height: 200px;
 }
+
 div {
     text-align: center;
 }
+
 h1 {
     background-color: var(--color-background-travel);
 }
+
 h2 {
     background-color: var(--color-background-restaurant);
 }

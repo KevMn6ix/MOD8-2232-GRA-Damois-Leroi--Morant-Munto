@@ -1,72 +1,90 @@
 <script setup>
 
-    import PlaceItem from './PlaceItem.vue'
-    import { computed } from 'vue'
-    import { useRoute } from 'vue-router';
-    import UsePlaceService from '../../server/services/places-service';
-    const { type, placeArray } = defineProps({
-        type: String,
-        placeArray: Object
-    });
+import PlaceItem from './PlaceItem.vue'
+import { computed, ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router';
+import UsePlaceService from '../../server/services/places-service';
+import AuthentificationService from '@/services/AuthentificationService';
 
-    
+const { type, placeArray } = defineProps({
+    type: String,
+    placeArray: Object
+});
 
+const route = useRoute();
+const type_local = ref('');
+type_local.value = route.params.types;
 
-    const route = useRoute();   
-    const type_local = route.params.types;
+const getTypeForPage = computed(() => {
+    switch (type_local.value) {
+        case 'restaurant':
+            return 'Restaurant';
+        case 'activity':
+            return 'Activity';
+        case 'travel':
+            return 'Travel';
+        default:
+            return ''; // Gérer les cas où le type ne correspond à aucun de ceux attendus
+    }
+});
 
-    const searchresults = UsePlaceService().findPlaces().filter((place) => {
-        console.log(place);
-        console.log(place.Type);
-        console.log(place.Type === type_local);
-        console.log(type_local);
-        return place.Type === type_local;
-    });
+console.log(getTypeForPage.value)
+const places = ref();
 
-  
+onMounted(() => {
+    fetchPlaces();
+});
+
+async function fetchPlaces() {
+    const response = await AuthentificationService.findPlaces();
+    places.value = response.data
+}
+
 </script>
 
 <template>
-
-
     <ul>
-        <li v-for="place in searchresults">
-            <PlaceItem :rating="place.Rating" :id="place.Id">
-
-                <template #picture>
-                    <img :src="place.Picture" alt="place's picture">
-                </template>
-                <template #title>
-                    {{ place.Title }}
-                </template>
-                <template #address>
-                    {{ place.Address }}
-                </template>
-
-            </PlaceItem>
+        <li v-for="place in places">
+            <p v-if="place.place_type === getTypeForPage">
+                <PlaceItem :rating="place.Rating" :id="place.place_id">
+                    <template #picture>
+                        <img :src="place.photo_url" alt="place's picture">
+                    </template>
+                    <template #title>
+                        {{ place.place_name }}
+                    </template>
+                    <template #address>
+                        {{ place.place_address }}
+                    </template>
+                </PlaceItem>
+            </p>
         </li>
     </ul>
 </template>
 
 <style scoped>
+img {
+    height: 175px;
+    width: 175px;
+}
+
+@media (max-width: 555px) {
     img {
-        height: 175px;
-        width: 175px;
+        height: 50px;
+        width: 50px;
     }
-    @media (max-width: 555px) {
-        img {
-            height: 50px;
-            width: 50px;
-        }   
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+@media (max-width: 387) {
+    ul li {
+        width: 300px;
     }
-    ul {
-        display: flex;
-        flex-direction: column;
-    }
-    @media (max-width: 387) {
-        ul li {
-            width: 300px;
-        }
-        
-    }
+
+}
 </style>

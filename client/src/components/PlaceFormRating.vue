@@ -47,9 +47,7 @@ export default {
             UsePlaceService().addRating(this.$route.params.id, Object.is(NaN, parseInt(this.placeRate.hygieneRating)) ? 1 : parseInt(this.placeRate.hygieneRating), Object.is(NaN, parseInt(this.placeRate.ambianceRating)) ? 1 : parseInt(this.placeRate.ambianceRating), Object.is(NaN, parseInt(this.placeRate.priceRating)) ? 1 : parseInt(this.placeRate.priceRating), Object.is(undefined, this.placeRate.comment) ? "" : this.placeRate.comment);
             console.log(UsePlaceService().findRatings())
         },
-        referncePlace(id) {
-            return
-        }
+
     },
     components: { StarRating }
 }

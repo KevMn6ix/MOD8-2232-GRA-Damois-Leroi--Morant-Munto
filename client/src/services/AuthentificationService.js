@@ -7,6 +7,10 @@ export default {
 
     async login(creditentials) {
         return await Api().post('login', creditentials)
+    },
+
+    async findPlaces (creditentials) {
+        return await Api().get('places', creditentials)
     }
 }
 

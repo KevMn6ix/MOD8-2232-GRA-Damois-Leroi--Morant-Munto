@@ -8,5 +8,5 @@ module.exports = (app) => {
     app.post('/place/add',placesRepository.addPlace)
     app.get('/review/:id', functionRating.findRating)
     app.post('/review/:id', functionRating.addRating)
-    app.get('/place/', placesRepository.findPlaces)
+    app.get('/places', placesRepository.findPlaces)
 }
