@@ -13,7 +13,7 @@ console.log(tempListPlace)
 </script>
 
 <template>
-  <header>
+  <header> 
     <NavBar @user-input="(termInputed) => {userInput = termInputed;}"/>
   </header>
   

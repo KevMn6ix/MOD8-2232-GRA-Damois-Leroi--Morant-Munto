@@ -7,7 +7,7 @@ import { RouterLink } from 'vue-router';
        Add a Place
     </button>
   </RouterLink>
-</template>
+</template> 
 <style scoped>
 :root {
   --light-color-background-restaurant: #A5BDD9;

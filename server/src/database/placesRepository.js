@@ -13,7 +13,6 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(cors())
 
-
 module.exports = {
     addPlace (req, res) {
         const id = req.body.id;

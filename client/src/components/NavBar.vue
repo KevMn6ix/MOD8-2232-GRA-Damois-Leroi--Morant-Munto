@@ -18,7 +18,7 @@ function sendUserInput() {
         </h3>
         <input type="text" v-model="UserInput" @input="sendUserInput">
         <div>
-        <router-link to='/login'>
+        <router-link to='/login'> 
         <button>
             Log In
         </button>

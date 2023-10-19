@@ -13,7 +13,7 @@
     </div>
 </template>
 <style scoped>
-#rating-item {
+#rating-item { 
     border: solid black;
     display: flex;
     flex-direction: row;

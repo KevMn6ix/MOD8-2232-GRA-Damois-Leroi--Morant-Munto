@@ -9,7 +9,7 @@ function sendUserInput() {
     console.log(UserInput.value)
     emit('user-input', UserInput.value)
 }
-</script>
+</script> 
 /** This component is the bar at the top of the screen */
 <template>
     <header>

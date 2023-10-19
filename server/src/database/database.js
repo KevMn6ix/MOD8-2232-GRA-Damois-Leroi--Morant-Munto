@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
     database: 'mtl_student_spot_database',
     user: 'root',
     password:'root'
-  
+   
   })
 
 module.exports = connection;

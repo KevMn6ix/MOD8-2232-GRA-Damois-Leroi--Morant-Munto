@@ -20,7 +20,7 @@ const placeInput = ref ({
             Place's address
         </label>
         <input type="text" v-model="placeInput.Address">
-        <label>
+        <label> 
             Price Rating
         </label>
         <button>

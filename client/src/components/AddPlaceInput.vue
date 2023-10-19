@@ -9,7 +9,7 @@ function sendUserInput() {
 const inputType = defineProps({
     Type: String
 })
-</script>
+</script> 
 <template>
     <div id="enter">
     <h3>

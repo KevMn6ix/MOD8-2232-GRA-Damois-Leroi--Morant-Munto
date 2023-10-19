@@ -34,7 +34,7 @@ const places = ref();
 onMounted(() => {
     fetchPlaces();
 });
-
+ 
 async function fetchPlaces() {
     const response = await AuthentificationService.findPlaces();
     places.value = response.data

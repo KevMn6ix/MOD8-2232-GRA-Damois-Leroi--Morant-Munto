@@ -9,7 +9,7 @@ const placeService = UsePlaceService()
     <header>
         <BarOutsideHome/>
     </header>
-    <main>
+    <main> 
         <h1>
             Reference any place you like to hang out
         </h1>

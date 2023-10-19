@@ -45,7 +45,6 @@
       <div v-if="placeList.length > 0">
         
         <PlaceTypeList :type = "types" :placeArray="placeList"/>
-      
       </div>
       <div v-else>
         <p>No places to display</p>

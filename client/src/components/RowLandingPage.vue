@@ -19,8 +19,7 @@ const rowProps = defineProps({
 * {
     color: white;
     @media (prefers-color-scheme: dark) {
-        color: white;
-        
+        color: white;    
     }
 }
 #sub-travel {

@@ -23,7 +23,6 @@ async function fetchPlaces() {
     places.value = response.data
 }
 
-
 const place = computed(() => {
     return placeList.find((p) => p.Id === id_place);
 });

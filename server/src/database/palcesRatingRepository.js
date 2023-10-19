@@ -10,7 +10,7 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(cors())
 
-module.exports = {
+module.exports = { 
      findRating (req, res) {
         const idPlace = req.params.id;
 
