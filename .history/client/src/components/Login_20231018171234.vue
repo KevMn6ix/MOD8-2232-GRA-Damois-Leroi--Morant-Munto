@@ -56,7 +56,7 @@ export default {
 <style scoped>
 main {
     background-image: url('../assets/MontRoyal.jpg');
-    background-size: 100% 100%; 
+    background-size: auto 100%; 
 
   color: #FFF; /* Set text color for contrast */
   text-align: center;

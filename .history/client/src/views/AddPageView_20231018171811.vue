@@ -72,7 +72,7 @@ main{
     position: relative;
     z-index: 1;
     text-align: center;
-    height: 510px;
+    height: 500px;
     
 
 }

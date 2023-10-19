@@ -7,7 +7,6 @@ const placeSpecificity = defineProps({
 </script>
 /** this component is used for display any kind place */
 <template>
-    {{ console.log(placeSpecificity.rating) }}
     <section id="window">
     <RouterLink  :to="{name : 'PlacePage', params : {types :placeSpecificity.type, id: placeSpecificity.id }}">
         <div id="big-div">
@@ -22,35 +21,36 @@ const placeSpecificity = defineProps({
     <slot name="address" id="address">
     </slot></div>
 </div>
-    <div class="picture" v-if="placeSpecificity.rating===5">
+    {{ console.log(placeSpecificity.Rating) }}
+    <div class="picture" v-if="placeSpecificity.Rating===5">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===4">
+    <div class="picture" v-else-if="placeSpecificity.Rating===4">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===3">
+    <div class="picture" v-else-if="placeSpecificity.Rating===3">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===2">
+    <div class="picture" v-else-if="placeSpecificity.Rating===2">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===1">
+    <div class="picture" v-else-if="placeSpecificity.Rating===1">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
@@ -65,7 +65,6 @@ const placeSpecificity = defineProps({
         <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
 </div>
-    
      </RouterLink>
     </section>
    

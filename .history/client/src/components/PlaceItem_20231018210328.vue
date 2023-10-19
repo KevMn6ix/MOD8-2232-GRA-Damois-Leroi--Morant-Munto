@@ -22,35 +22,35 @@ const placeSpecificity = defineProps({
     <slot name="address" id="address">
     </slot></div>
 </div>
-    <div class="picture" v-if="placeSpecificity.rating===5">
+    <div class="picture" v-if="placeSpecificity.Rating===5">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===4">
+    <div class="picture" v-else-if="placeSpecificity.Rating===4">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===3">
+    <div class="picture" v-else-if="placeSpecificity.Rating===3">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===2">
+    <div class="picture" v-else-if="placeSpecificity.Rating===2">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
     </div>
-    <div class="picture" v-else-if="placeSpecificity.rating===1">
+    <div class="picture" v-else-if="placeSpecificity.Rating===1">
         <img src="../assets/etoileMTL.png" alt="*">
         <img src="../assets/etoileMTLempty.png" alt="0">
         <img src="../assets/etoileMTLempty.png" alt="0">
