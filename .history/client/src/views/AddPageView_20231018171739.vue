@@ -66,13 +66,12 @@ main{
     color: white;
     margin-top: 10px;
     background-image: url('../assets/ring.jpg');
-    background-size: 1520px; 
+    background-size: 1520px 100%; 
     background-repeat: repeat;  
     background-position: 30%;  
     position: relative;
     z-index: 1;
     text-align: center;
-    height: 510px;
     
 
 }

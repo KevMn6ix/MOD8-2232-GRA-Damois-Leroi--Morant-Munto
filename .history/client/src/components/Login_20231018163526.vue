@@ -54,10 +54,8 @@ export default {
 </template>
 
 <style scoped>
-main {
-    background-image: url('../assets/MontRoyal.jpg');
-    background-size: 100% 100%; 
-
+.main-container {
+  background: linear-gradient(to bottom, #A5BDD9, #001f3f);
   color: #FFF; /* Set text color for contrast */
   text-align: center;
   display: flex;
@@ -65,23 +63,6 @@ main {
   align-items: center;
   padding: 4rem 0;
   gap: 2rem;
-  z-index: 1;
-  background-position: 30%;  
-    position: relative;
-}
-
-main::before{
-
-    background-color: rgba(2, 7, 16, 0.54);  
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
 }
 
 h1 {
@@ -93,13 +74,12 @@ h2 {
 }
 
 .form-container {
- 
+  background: linear-gradient(to bottom, #a2c4ec, #001f3f);
   display: flex;
   flex-direction: column;
   padding: 2rem;
   gap: 2rem;
-  color: #FFF; /* Set text color for form inputs */
-  font-size: 20px;
+  color: #000; /* Set text color for form inputs */
 }
 
 .input-pair {
@@ -117,5 +97,13 @@ h2 {
   align-items: center;
 }
 
-
+@media (prefers-color-scheme: dark) {
+  .main-container {
+    background: linear-gradient(to bottom, #a5bdd957, #001f3f);
+  }
+  .form-container {
+    background: linear-gradient(to bottom, #a2c4ec75, #001f3f);
+  }
+  
+}
 </style>

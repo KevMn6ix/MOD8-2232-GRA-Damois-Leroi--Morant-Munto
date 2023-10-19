@@ -72,7 +72,7 @@ const placeSpecificity = defineProps({
 </template>
 <style scoped>
 * {
-    color: white;
+    color: black;
     @media (prefers-color-scheme: dark) {
         color: white;
     }
@@ -104,7 +104,7 @@ id-address {
     margin-right: 0;
 }
 #window {
-    border: solid white;
+    border: solid black;
     display: flex;
     justify-content: center;
     padding: 0;

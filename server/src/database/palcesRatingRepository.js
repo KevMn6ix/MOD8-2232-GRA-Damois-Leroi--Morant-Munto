@@ -21,28 +21,27 @@ module.exports = {
                 if (err) {
                     console.log(err);
                 }
-                res.send(result);
+                res.json(result);
             }
             
         )
         
     },
     addRating (req, res) {
-        const id = req.body.id;
         const IdPlace = req.params.id;
         const hygieneRating = req.body.hygieneRating;
         const ambianceRating = req.body.ambianceRating;
         const priceRating = req.body.priceRating;
         const commentary = req.body.commentary;
 
-        var sql = "INSERT INTO rating (id, idPlace, CommentRate, HygieneRating, AmbianceRating, PriceRating) VALUES (?,?,?,?,?,?);"
-        connection.query(sql, [id, IdPlace, commentary, hygieneRating,  ambianceRating, priceRating],
+        var sql = "INSERT INTO rating (idPlace, CommentRate, HygieneRating, AmbianceRating, PriceRating) VALUES (?,?,?,?,?);"
+        connection.query(sql, [ IdPlace, commentary, hygieneRating,  ambianceRating, priceRating],
             (err, result) => {
                 console.log(err);
             }
         )
         res.send({
-            message : `Thank you, ${req.body.id} have been successfully added !`
+            message : `Thank you, ${req.body.commentary} have been successfully added !`
         })
     }
 }

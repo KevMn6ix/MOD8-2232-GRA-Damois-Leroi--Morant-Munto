@@ -1,3 +1,4 @@
+import axios from 'axios'
 let id = 0;
 const placeList = [
   {Id: ++id, Type: "restaurant", Title: "Brutopia", Address: "888 rjij", Rating: 4, HygieneRating: 5, AmbianceRating: 3, PriceRating: 5, Picture: "https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg"},
@@ -15,10 +16,28 @@ const PlaceRating = [
 ]
 
 
-function findPlaces() {
-    return placeList
+function returnPlaces() {
+    axios.get("http://localhost:8081/place").then(responce => {
+        console.log(responce.data)
+        const tempo = responce.data
+        return tempo
+    }).catch(error => {
+        console.log(error)
+    })
 }
 
+
+async function findPlaces() {
+    return axios.get("http://localhost:8081/place").then(responce => {
+        console.log(responce.data[0])
+        const tempo = responce.data
+        return tempo
+    }).catch(error => {
+        console.log(error)
+    })
+    //return placeList
+}
+/*
 function findPlace(id) {
     for (let place of placeList) {
         if (place.Id == id) {
@@ -27,7 +46,29 @@ function findPlace(id) {
         
     }
     return null
+}*/
+
+function findPlace(id) {
+    return axios.get(`http://localhost:8081/place/${id}`).then(responce => {
+        console.log(responce.data[0])
+        const tempo = responce.data[0]
+        return tempo
+    }).catch(error => {
+        console.log(error)
+    })
 }
+
+function getRating(id) {
+    return axios.get(`http://localhost:8081/place/${id}/all`).then(responce => {
+        console.log(responce.data[0])
+        const tempo = responce.data[0]
+        return tempo
+    }).catch(error => {
+        console.log(error)
+    })
+}
+
+
 
 function sumAmbiance(listOfRatings) {
     let res = 0;
@@ -77,7 +118,7 @@ function addRating(idPlace, hygieneRating, ambianceRating, priceRating, commentR
     */
    const newRating = {}
    newRating["Id"] = idRating++
-   newRating["IdPlace"] = placeList[idPlace - 1].Id
+   newRating["IdPlace"] = placeList[ idPlace - 1].Id
    newRating["HygieneRating"] = hygieneRating
    newRating["AmbianceRating"] = ambianceRating
    newRating["PriceRating"] = priceRating
@@ -88,6 +129,11 @@ function addRating(idPlace, hygieneRating, ambianceRating, priceRating, commentR
     console.log(PlaceRating[idRating - 1].IdPlace)
     console.log("##############################")
     */
+    axios.post(`http://localhost:8081/review/${idPlace}`, {hygieneRating: hygieneRating, ambianceRating: ambianceRating, priceRating: priceRating, commentary: commentRate}).then(responce => {
+        console.log(responce)
+    }). catch(error => {
+        console.log(error)
+    })
     actualiseRating(idPlace)
 }
 
@@ -133,5 +179,7 @@ export default function UsePlaceService () {
     findRatings,
     findRating,
     addRating,
-    findRatingsAbout
+    findRatingsAbout,
+    returnPlaces,
+    getRating
 }}

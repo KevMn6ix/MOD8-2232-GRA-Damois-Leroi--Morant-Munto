@@ -104,7 +104,10 @@ id-address {
     margin-right: 0;
 }
 #window {
-    border: solid white;
+    border: solid black;
+    @media (prefers-color-scheme: dark) {
+        color: white;
+    }
     display: flex;
     justify-content: center;
     padding: 0;
@@ -115,9 +118,6 @@ id-address {
         font-size: 75%;
     }
     /*margin-left: 10%;*/
-    @media (prefers-color-scheme: dark) {
-        border: solid white;
-    }
     
 }
 @media (max-width: 400px) {

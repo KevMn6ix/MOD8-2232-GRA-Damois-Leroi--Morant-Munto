@@ -29,6 +29,37 @@ const place = computed(() => {
 });
 
 const calculateTotalRating = (place) => {
+    import { ref, computed, onMounted } from 'vue'
+    import { useRoute } from 'vue-router'
+    import UsePlaceService from '../../server/services/places-service';
+    import TheRatingList from '../components/TheRatingList.vue';
+    import BarOutsideHome from  '../components/BarOutsideHome.vue'
+    const placeService = UsePlaceService();
+    const place = ref({})
+    
+
+    //console.log(placeList)
+    const route = useRoute()
+    const id_place = Number(route.params.id)
+/*
+    const place = computed(() => {
+        return placeList.find((p) => p.Id === id_place);
+    });
+*/
+onMounted(
+    async () => {
+        place.value = await placeService.findPlace(id_place);
+        console.log(place.value)
+    }
+)
+const placeRating = ref({})
+onMounted(
+    async () => {
+        placeRating.value = await placeService.getRating(id_place);
+        console.log(placeRating.value)
+    }
+)
+ /*   const calculateTotalRating = (place) => {
 
     if (place) {
         const { HygieneRating, AmbianceRating, PriceRating } = place;
@@ -53,16 +84,16 @@ const calculateTotalRating = (place) => {
         <!-- Display ratings -->
         <div>
             <h2>Ratings</h2>
-            <p>Hygiene Rating: {{ place.HygieneRating }}</p>
-            <p>Ambiance Rating: {{ place.AmbianceRating }}</p>
-            <p>Price Rating: {{ place.PriceRating }}</p>
+            <p>Hygiene Rating: {{ placeRating.hygieneRating }}</p>
+            <p>Ambiance Rating: {{ placeRating.ambianceRating }}</p>
+            <p>Price Rating: {{ placeRating.priceRating }}</p>
             <!-- Add other ratings as needed -->
         </div>
 
         <!-- Display total rating (calculate it if needed) -->
         <div>
             <h2>Total Rating</h2>
-            <p>{{ calculateTotalRating(place) }}</p>
+            <p>{{ placeRating.rating }}</p>
         </div>
         <div>
             <router-link :to="'/places/review/' + place.Id" name='placereview'> review</router-link>
@@ -91,23 +122,24 @@ const calculateTotalRating = (place) => {
 }
 
 img {
-    min-width: 75px;
-    min-height: 75px;
-    height: 75%;
-    width: 75%;
-    max-width: 200px;
-    max-height: 200px;
+  min-width: 75px;
+  min-height: 75px;
+  height: 75%;
+  width: 75%;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 div {
-    text-align: center;
+  text-align: center;
+  background-color: var(--color-background-travel); /* Background color for other div elements */
 }
 
 h1 {
-    background-color: var(--color-background-travel);
+  background-color: var(--color-background-travel); /* Adjust the background color to match other pages */
 }
 
 h2 {
-    background-color: var(--color-background-restaurant);
+  background-color: var(--color-background-restaurant); /* Adjust the background color to match other pages */
 }
 </style>
