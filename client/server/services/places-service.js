@@ -17,7 +17,7 @@ const PlaceRating = [
 
 
 function returnPlaces() {
-    axios.get("http://localhost:8081/places").then(responce => {
+    axios.get("http://localhost:8081/place").then(responce => {
         console.log(responce.data)
         const tempo = responce.data
         return tempo
@@ -26,8 +26,9 @@ function returnPlaces() {
     })
 }
 
+
 async function findPlaces() {
-    return axios.get("http://localhost:8081/places").then(responce => {
+    return axios.get("http://localhost:8081/place").then(responce => {
         console.log(responce.data[0])
         const tempo = responce.data
         return tempo
@@ -36,7 +37,6 @@ async function findPlaces() {
     })
     //return placeList
 }
-
 /*
 function findPlace(id) {
     for (let place of placeList) {
@@ -48,8 +48,8 @@ function findPlace(id) {
     return null
 }*/
 
-async function findPlace(id) {
-    return await axios.get(`http://localhost:8081/places/${id}`).then(responce => {
+function findPlace(id) {
+    return axios.get(`http://localhost:8081/place/${id}`).then(responce => {
         console.log(responce.data[0])
         const tempo = responce.data[0]
         return tempo
@@ -59,7 +59,7 @@ async function findPlace(id) {
 }
 
 function getRating(id) {
-    return axios.get(`http://localhost:8081/places/${id}/all`).then(responce => {
+    return axios.get(`http://localhost:8081/place/${id}/all`).then(responce => {
         console.log(responce.data[0])
         const tempo = responce.data[0]
         return tempo
@@ -98,7 +98,14 @@ function sumPrice(listOfRatings) {
 
 function findRatingsAbout(id) {
     /*console.log(PlaceRating)*/
-    return PlaceRating.filter((rating) => {  return rating.IdPlace == id});
+    //return PlaceRating.filter((rating) => {  return rating.IdPlace == id});
+    return axios.get(`http://localhost:8081/review/${id}`).then(responce => {
+        console.log(responce.data)
+        const tempo = responce.data
+        return tempo
+    }).catch(error => {
+        console.log(error)
+    })
 }
 
 function actualiseRating(id) {
