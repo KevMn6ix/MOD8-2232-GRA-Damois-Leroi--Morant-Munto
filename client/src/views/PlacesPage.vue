@@ -20,6 +20,7 @@
 onMounted(
     async () => {
         place.value = await placeService.findPlace(id_place);
+        console.log("Place page receive place responce")
         console.log(place.value)
     }
 )
@@ -40,7 +41,14 @@ onMounted(
         }
         return 0; 
     };*/
+const allTheRating = ref([])
+onMounted(
+    async () => {
+         allTheRating.value = await servicePlace.findRatingsAbout(propEntered.idOfPlace);
 
+        console.log(allTheRating.value)
+    }
+)
 </script>
 
 <template>
@@ -69,7 +77,7 @@ onMounted(
         <div>
             <router-link :to="'/places/review/' + place.Id" name='placereview'> review</router-link>
         </div>
-        <TheRatingList :idOfPlace="place.Id"/>
+        <TheRatingList :idOfPlace="id_place" />
     </div>
 </template>
 

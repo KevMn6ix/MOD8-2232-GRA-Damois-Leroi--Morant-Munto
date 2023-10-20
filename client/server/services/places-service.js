@@ -98,7 +98,14 @@ function sumPrice(listOfRatings) {
 
 function findRatingsAbout(id) {
     /*console.log(PlaceRating)*/
-    return PlaceRating.filter((rating) => {  return rating.IdPlace == id});
+    //return PlaceRating.filter((rating) => {  return rating.IdPlace == id});
+    return axios.get(`http://localhost:8081/review/${id}`).then(responce => {
+        console.log(responce.data)
+        const tempo = responce.data
+        return tempo
+    }).catch(error => {
+        console.log(error)
+    })
 }
 
 function actualiseRating(id) {
