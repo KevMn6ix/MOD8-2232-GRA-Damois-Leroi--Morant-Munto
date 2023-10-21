@@ -16,8 +16,8 @@ export default {
                 console.log('this is the content of stary')
                 console.log(i)
                 console.log((document.getElementById(this.$props.category + i).src).split("etoileMTL"))
-                document.getElementById(this.$props.category +i).src = i > rating ?  ((document.getElementById(this.$props.category + i).src).split("etoileMTL")[0] + "etoileMTLempty.png") : ((document.getElementById(this.$props.category + i).src).split("etoileMTL")[0] + "etoileMTL.png");
-                console.log(i <= rating ? "../assets/etoileMTLempty.png" : "../assets/etoileMTL.png")
+                document.getElementById(this.$props.category +i + 'e').hidden = i <= rating;
+                document.getElementById(this.$props.category +i).hidden = i > rating;
             }
             this.$emit('rate', rating);
             
@@ -32,7 +32,7 @@ export default {
 <template>
     <div>
         <span v-for="star in 5" :key="star" @click="rate(star)">
-            <i :class="star <= rating ? 'fas fa-star' : 'far fa-star'"><img :id="category + star" src="../assets/etoileMTLempty.png" alt="*"></i>
+            <i :class="star <= rating ? 'fas fa-star' : 'far fa-star'"><img :id="category + star + 'e'" src="../assets/etoileMTLempty.png" alt="0"><img :id="category + star" hidden src="../assets/etoileMTL.png" alt="*"></i>
         </span>
     </div>
 
