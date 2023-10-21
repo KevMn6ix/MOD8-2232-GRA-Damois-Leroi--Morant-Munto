@@ -44,7 +44,7 @@ onMounted(
 const allTheRating = ref([])
 onMounted(
     async () => {
-         allTheRating.value = await servicePlace.findRatingsAbout(propEntered.idOfPlace);
+         allTheRating.value = await placeService.findRatingsAbout(id_place);
 
         console.log(allTheRating.value)
     }
